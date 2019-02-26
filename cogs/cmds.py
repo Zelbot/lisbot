@@ -39,7 +39,7 @@ class CMDS(commands.Cog):
 
     def choose_freecam_folder(self, args, return_urls=False):
         """
-        Chooses a folder to use in the lis command.
+        Chooses a folder to use in the image command.
         """
         freecam_path = os.path.join(os.getcwd(), 'images', 'Life_is_Strange')
         all_folders = [os.path.relpath(os.path.join(freecam_path, folder))
@@ -53,6 +53,9 @@ class CMDS(commands.Cog):
             return urls
 
         if args:
+            if len(args) == 1 and args[0].lower() == 'random':
+                return urls[random.choice(list(urls.keys()))]
+
             # Remove args that do not contain letters or numbers
             # to prevent matching things like singular periods
             alnum_args = [arg for arg in args
@@ -66,15 +69,7 @@ class CMDS(commands.Cog):
             if matched_urls:
                 chosen_url = random.choice(matched_urls)
                 chosen_folder = urls[chosen_url]
-            # Choose any random folder if the search had no matches
-            else:
-                chosen_folder = random.choice(all_folders)
-
-        # Choose any random folder if no source was provided
-        else:
-            chosen_folder = random.choice(all_folders)
-
-        return chosen_folder
+                return chosen_folder
 
     def get_freecam_sources(self, args):
         """
@@ -296,9 +291,13 @@ class CMDS(commands.Cog):
         Posts an image about Life is Strange, supports matching based on sources.
         ##nl## Use `cp image overview` to get an overview of all available sources.
         """
-        # Post an overview of available sources and return
-        if args and args[0].lower() == 'overview':
+        if not args:
             await ctx.send(self.get_freecam_sources(args))
+            return
+
+        chosen_folder = self.choose_freecam_folder(args)
+        if chosen_folder is None:
+            await ctx.send(f'Could not match a source based on `{" ".join(args)}`!')
             return
 
         chosen_folder = self.choose_freecam_folder(args)
