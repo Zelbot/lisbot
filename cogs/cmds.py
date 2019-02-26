@@ -289,7 +289,8 @@ class CMDS(commands.Cog):
     async def image(self, ctx, *args):
         """
         Posts an image about Life is Strange, supports matching based on sources.
-        ##nl## Use `cp image overview` to get an overview of all available sources.
+        ##nl## Use `cp image` to get an overview of all available sources.
+        ##nl## Use `cp image random` to get a random image.
         """
         if not args:
             await ctx.send(self.get_freecam_sources(args))
@@ -325,7 +326,9 @@ class CMDS(commands.Cog):
     @commands.command()
     async def quote(self, ctx, *, char=None):
         """
-        Chooses a quote from the specified character or a random one if `cp quote random` is used.
+        Posts a quote from the specified character.
+        ##nl## Use `cp quote` to get an overview of all available characters.
+        ##nl## Use `cp quote random` to get a random quote.
         """
         # Make a copy of the global imported quotes dict
         # and add extra quotes to the local (temporary) copy

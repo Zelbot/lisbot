@@ -16,7 +16,8 @@ startup_extensions = [f'cogs.{os.path.splitext(file)[0]}'
                       if file.endswith('.py')]  # Prevent errors for __pycache__
 startup_extensions.append('jishaku')
 
-prefixes = ['chloe ', 'chloe', 'cp ', 'cp']
+prefixes = ['chloe', 'cp']
+prefixes += [f'{p} ' for p in prefixes]
 prefixes += [p.title() for p in prefixes]
 bot = commands.Bot(command_prefix=prefixes, case_insensitive=True)
 bot.quotes = None
