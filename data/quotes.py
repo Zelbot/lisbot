@@ -1149,6 +1149,11 @@ quotes = {
     'Skip Matthews': [
         "Fuck 'em. Bunch of fascists.",
     ],
+
+    'Pompidou': [
+        'Woof!',
+    ],
+
 }
 
 # count = 0

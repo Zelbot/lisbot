@@ -2,6 +2,7 @@
 import asyncio
 import itertools
 import os
+import random
 import sys
 import traceback
 # PIP
@@ -78,25 +79,23 @@ async def on_command_error(ctx, exc):
     """
     Print and report errors related to commands.
     """
-    dm_dev = True
-    bot_output = await utils.get_bot_error(ctx, exc)
+    output_embed = await utils.get_bot_error(ctx, exc)
 
-    if dm_dev is True and not isinstance(exc, commands.errors.CommandOnCooldown):
-        ai = await bot.application_info()
-        if isinstance(bot_output, str):
-            await ai.owner.send(bot_output)
-        elif isinstance(bot_output, discord.embeds.Embed):
-            await ai.owner.send(embed=bot_output)
-    else:
-        if isinstance(bot_output, str):
-            await ctx.send(bot_output)
-        elif isinstance(bot_output, discord.embeds.Embed):
-            await ctx.send(embed=bot_output)
+    if output_embed is not None:
+        if isinstance(exc, commands.errors.CommandOnCooldown):
+            # output_embed.title = discord.Embed.Empty
+            # await ctx.send(embed=output_embed)
+            cooldown = random.choice(['Chillax!', 'Chillax, sistah.'])
+            cooldown += f' Try again in {round(exc.retry_after, 2)} seconds.'
+            await ctx.send(cooldown)
+        else:
+            ai = await bot.application_info()
+            await ai.owner.send(embed=output_embed)
 
     print_output = await utils.get_logging_error(ctx, exc)
     if print_output is not None:
         print(print_output + '\n')
-        dev_error_channel = bot.get_channel(config.dev_error_channel_id)
+        dev_error_channel = bot.get_channel(int(config.dev_error_channel_id))
         await dev_error_channel.send(f'```{print_output}```')
 
         traceback.print_exception(type(exc),

@@ -53,7 +53,7 @@ async def get_bot_error(ctx, exc):
         return None
 
     error_embed = discord.Embed(
-        # title=f':x: A {type(exception).__name__} error occurred',
+        title=f':x: A {type(exc).__name__} error occurred',
         color=get_role_color(ctx.me)[1],
         description=(str(exc))
     )
@@ -80,7 +80,8 @@ async def get_logging_error(ctx, exc):
         commands.errors.BadArgument,
         commands.errors.CommandOnCooldown,
         commands.errors.MissingRequiredArgument,
-        commands.errors.TooManyArguments
+        commands.errors.TooManyArguments,
+        discord.NotFound
     ]
     if type(exc) in ignored_exception_types:
         return None

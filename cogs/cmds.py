@@ -285,7 +285,7 @@ class CMDS(commands.Cog):
             return None
         return random.choice(available_chars)
 
-    @commands.command()
+    @commands.command(aliases=['img', 'picture', 'pic'])
     async def image(self, ctx, *args):
         """
         Posts an image about Life is Strange, supports matching based on sources.
@@ -323,7 +323,7 @@ class CMDS(commands.Cog):
 
         await upload_message.delete()
 
-    @commands.command()
+    @commands.command(aliases=['quotes'])
     async def quote(self, ctx, *, char=None):
         """
         Posts a quote from the specified character.
