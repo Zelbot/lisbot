@@ -94,15 +94,17 @@ async def on_command_error(ctx, exc):
             await ai.owner.send(embed=output_embed)
 
     print_output = await utils.get_logging_error(ctx, exc)
-    if print_output is not None:
-        print(print_output + '\n')
-        dev_error_channel = bot.get_channel(int(config.dev_error_channel_id))
-        await dev_error_channel.send(f'```{print_output}```')
+    if print_output is None:
+        return
 
-        traceback.print_exception(type(exc),
-                                  exc,
-                                  exc.__traceback__,
-                                  file=sys.stderr)
+    print(print_output + '\n')
+    dev_error_channel = bot.get_channel(config.dev_error_channel_id)
+    await dev_error_channel.send(f'```{print_output}```')
+
+    traceback.print_exception(type(exc),
+                              exc,
+                              exc.__traceback__,
+                              file=sys.stderr)
 
 
 async def change_status():
