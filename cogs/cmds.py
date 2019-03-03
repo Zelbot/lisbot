@@ -1,4 +1,5 @@
 # BUILTIN
+import asyncio
 import os
 import random
 import string
@@ -10,6 +11,79 @@ from numpy.random import choice
 import config
 from utils import utils
 from data.quotes import quotes
+
+
+class SourcePaginator:
+    """
+    Paginator to make the image sources output more readable.
+    """
+    __slots__ = ('bot', 'ctx', 'cmds', 'cog', 'index')
+
+    def __init__(self, bot, ctx, cmds):
+        self.bot = bot
+        self.ctx = ctx
+        self.cmds = cmds
+        self.index = 0
+
+    async def await_pagination_reaction(self, message, paginator):
+        """
+        Enable reactions so that a user can flip between pages
+        of a cog's command help overview.
+        """
+        await message.add_reaction('⬅')
+        await message.add_reaction('➡')
+
+        def check(reaction_, user_):
+            return user_.id == self.ctx.author.id \
+                   and str(reaction_) in ['➡', '⬅'] \
+                   and reaction_.message.id == message.id
+
+        try:
+            reaction, user = await self.bot.wait_for('reaction_add',
+                                                     timeout=30.0,
+                                                     check=check)
+        except asyncio.TimeoutError:
+            try:
+                await message.clear_reactions()
+            except discord.NotFound:
+                return
+            except discord.Forbidden:
+                await message.remove_reaction('⬅', self.ctx.me)
+                await message.remove_reaction('➡', self.ctx.me)
+        else:
+            index_before = self.index
+            if str(reaction) == '➡' and self.index < len(paginator.pages) - 1:
+                self.index += 1
+            elif str(reaction) == '⬅' and self.index > 0:
+                self.index -= 1
+
+            if index_before != self.index:
+                try:
+                    await message.edit(content=paginator.pages[self.index])
+                except discord.NotFound:
+                    return
+                if self.ctx.channel.permissions_for(self.ctx.me).manage_messages is True:
+                    await message.remove_reaction(reaction, user)
+            # Reset timer, wait for next pagination reaction
+            await self.await_pagination_reaction(message, paginator)
+
+    async def paginate(self):
+        """
+        Cycle through multiple pages using reactions.
+        """
+        urls = self.cmds.choose_freecam_folder('_', return_urls=True)
+        paginator = commands.Paginator(prefix='**Available sources:**',
+                                       suffix='')
+
+        for index, url in enumerate(urls.keys()):
+            # Close each page when it has reached 3 commands
+            if index % 15 == 0 and index > 0:
+                paginator.close_page()
+            paginator.add_line(f'  <{url}>')
+
+        page = await self.ctx.send(paginator.pages[0])
+        if len(paginator.pages) > 1:
+            await self.await_pagination_reaction(page, paginator)
 
 
 class CMDS(commands.Cog):
@@ -295,7 +369,9 @@ class CMDS(commands.Cog):
         ##nl## Use `cp image random` to get a random image.
         """
         if not args:
-            await ctx.send(self.get_freecam_sources(args))
+            # await ctx.send(self.get_freecam_sources(args))
+            source_paginator = SourcePaginator(self.bot, ctx, self)
+            await source_paginator.paginate()
             return
 
         chosen_folder = self.choose_freecam_folder(args)
