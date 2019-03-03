@@ -1,6 +1,27 @@
+# BUILTIN
+import types
 # PIP
 import discord
 from discord.ext import commands
+
+
+class QuoteChar(commands.Converter):
+    """
+    Converter to more easily keep the names of quote characters uniform.
+    """
+    @staticmethod
+    async def format_name(name):
+        """
+        Used to keep the format of quote characters names uniform.
+        """
+        return name.lower().title().replace('And', '&')
+
+    async def convert(self, ctx, argument):
+        if not isinstance(argument, str):
+            raise ValueError(f'Passed type {type(argument).__name__} '
+                             f'for argument "{argument}", expected type str')
+
+        return await self.format_name(argument)
 
 
 def get_role_color(member):
@@ -101,3 +122,22 @@ def get_avatar_formatted(user):
     if user.is_avatar_animated() is True:
         return user.avatar_url_as(format='gif')
     return user.avatar_url_as(format='png')
+
+
+async def invoke_with_checks(ctx, command, *args, **kwargs):
+    """
+    Execute the specified command only if all checks pass.
+    """
+    print(args)
+    print(kwargs)
+    if type(command) not in [types.FunctionType, types.MethodType, commands.Command, str]:
+        raise ValueError(f'Argument for parameter <command> is invalid.')
+
+    if type(command) in [types.FunctionType, types.MethodType]:
+        command = ctx.bot.get_command(command.__name__)
+
+    if type(command) == str:
+        command = ctx.bot.get_command(command)
+
+    if await command.can_run(ctx) is True:
+        await ctx.invoke(command, *args, **kwargs)

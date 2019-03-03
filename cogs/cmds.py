@@ -5,6 +5,7 @@ import string
 # PIP
 import discord
 from discord.ext import commands
+from numpy.random import choice
 # CUSTOM
 import config
 from utils import utils
@@ -133,10 +134,7 @@ class CMDS(commands.Cog):
 
         # Add padding and quote count
         for name_list in [left_names, right_names]:
-            try:
-                longest_str = len(max(name_list, key=len))
-            except ValueError:  # Empty name list for custom quotes
-                continue
+            longest_str = len(max(name_list, key=len))
 
             for index, name in enumerate(name_list[:]):
                 padded_name = name.ljust(longest_str) + '  -  '
@@ -179,10 +177,7 @@ class CMDS(commands.Cog):
         """
         char_pairs = sorted([char for char in quotes_dict if '&' in char])
         quotes_lens = [str(len(quotes_dict[char])) for char in char_pairs]
-        try:
-            longest_quote = len(max(quotes_lens, key=len))
-        except ValueError:  # Empty list for custom quotes
-            return ''
+        longest_quote = len(max(quotes_lens, key=len))
 
         firsts_of_pairs = []
         seconds_of_pairs = []
@@ -225,41 +220,32 @@ class CMDS(commands.Cog):
         return overview.strip()
 
     @staticmethod
-    def choose_quote_char(char, quotes_dict):
+    def choose_quote_char(char, quotes_dict, weighted=False):
         """
         Chooses a character name to be used in the quotes command.
+        If weighted is True, the amount of quotes for each character
+        is taken into account when the choice is made.
         """
         if char.count('&') > 1:  # Only two people per pair allowed, ever
             return None
 
-        # # Smol easter egg :)
-        # if char.lower() == 'daddy':
-        #     if random.randint(0, 1) == 0:
-        #         return 'Mark Jefferson'
-        #     if not any('daddy' in k.lower() for k in quotes_dict.keys()):
-        #         char = 'Mark Jefferson &'  # Don't return as we want a random pair
-        #     elif random.randint(0, 1) == 0:  # 'Daddy' in keys, do not guarantee a swap
-        #         char = 'Mark Jefferson &'
-
         if char.lower() == 'random':
-            return random.choice(list(quotes_dict.keys()))
+            available_chars = list(quotes_dict.keys())
 
-        if char in quotes_dict:
-            available_chars = [name for name in quotes_dict
+        elif char in quotes_dict:
+            available_chars = [name for name in quotes_dict.keys()
                                if char in name]
-            return random.choice(available_chars)
-            # return char
 
         # char not in quotes_dict
         # Incomplete name, e.g. 'Max' instead of 'Max Caulfield'
         # Side effect: 'D' also chooses a character, i.e. 'Daniel Da Costa'
-        if '&' in char:
+        elif '&' in char:
             # Complete dialogue pairs like 'William Price & Chloe Price'
             if not char.endswith('&'):
                 name1 = char.split('&')[0].strip()
                 name2 = char.split('&')[1].strip()
 
-                available_chars = [name for name in quotes_dict
+                available_chars = [name for name in quotes_dict.keys()
                                    if name1 in name and name2 in name
                                    and '&' in name]
                 # Remove unwanted dialogue pairs in case of double names
@@ -270,20 +256,29 @@ class CMDS(commands.Cog):
             # Incomplete dialogue pairs like 'Max Caulfield &'
             else:
                 char_name = char.split('&')[0].strip()
-                available_chars = [name for name in quotes_dict
+                available_chars = [name for name in quotes_dict.keys()
                                    if '&' in name and char_name in name]
 
         # Any matches based on both first and last name
         else:
-            available_chars = [name for name in quotes_dict
+            available_chars = [name for name in quotes_dict.keys()
                                # if any(split.startswith(char) for split in name.split())]
-                               if any(split.startswith(tuple(char.split()))
-                                      for split in name.split())]
+                               if any(split_.startswith(tuple(char.split()))
+                                      for split_ in name.split())]
 
         # Also covers incorrect inputs, e.g. 'Max & Chloe &'
         if not available_chars:  # No matching name found
             return None
-        return random.choice(available_chars)
+        if weighted is False:
+            return random.choice(available_chars)
+
+        chars = {name: list_ for name, list_ in quotes_dict.items()
+                 if name in available_chars}
+        # Calculate a list of percentage-wise probabilities by dividing
+        # the length of a single list through the sum of all lengths of all lists
+        probabilities = [len(list_) / sum([len(l) for l in chars.values()])
+                         for list_ in chars.values()]
+        return choice(a=list(chars.keys()), p=probabilities)
 
     @commands.command(aliases=['img', 'picture', 'pic'])
     async def image(self, ctx, *args):
@@ -323,12 +318,15 @@ class CMDS(commands.Cog):
 
         await upload_message.delete()
 
-    @commands.command(aliases=['quotes'])
-    async def quote(self, ctx, *, char=None):
+    @commands.group(aliases=['quotes'], invoke_without_command=True)
+    async def quote(self, ctx, *, char: utils.QuoteChar=None, weighted=False):
         """
         Posts a quote from the specified character.
         ##nl## Use `cp quote` to get an overview of all available characters.
         ##nl## Use `cp quote random` to get a random quote.
+        ##nl## Usually, each character has the same chance to get picked.
+        If you want to take the quote amount into account, use
+        `cp quote weighted random/name` instead.
         """
         # Make a copy of the global imported quotes dict
         # and add extra quotes to the local (temporary) copy
@@ -342,7 +340,7 @@ class CMDS(commands.Cog):
         char = char.lower().title()
         char = char.replace('And', '&')
 
-        chosen_char = self.choose_quote_char(char, quotes)
+        chosen_char = self.choose_quote_char(char, quotes, weighted=weighted)
         if chosen_char is None:
             await ctx.send(f'`{char}` is not a valid character!')
             return
@@ -353,6 +351,17 @@ class CMDS(commands.Cog):
         output = f'```{quote}```\n    `- {chosen_char}`'
 
         await ctx.send(output)
+
+    @quote.command(name='weighted', hidden=True)
+    async def quote_weighted(self, ctx, char: utils.QuoteChar=None):
+        """
+        Invoke the quote command, but change the normally unreachable
+        `weighted` param to True, so the choice also takes into account
+        the amount of quotes that each character has.
+        """
+        if char is None:
+            return
+        await utils.invoke_with_checks(ctx, 'quote', char=char, weighted=True)
 
     @commands.command(aliases=['board'])
     async def about(self, ctx):
