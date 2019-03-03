@@ -71,7 +71,7 @@ class Owner(commands.Cog):
             await ctx.send('Reloaded all cogs!')
             print('\n\n\nReloaded cogs, making space!\n\n\n')
 
-    @commands.command(aliases=['kysbot'])
+    @commands.command(aliases=['kys', 'kysbot'])
     async def gooffline(self, ctx):
         """
         Closes the bot's connection and stops

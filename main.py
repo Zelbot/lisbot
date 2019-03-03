@@ -18,7 +18,8 @@ startup_extensions = [f'cogs.{os.path.splitext(file)[0]}'
 startup_extensions.append('jishaku')
 
 prefixes = ['chloe', 'cp']
-prefixes += [f'{p} ' for p in prefixes]
+# Prefixes with spaces need to be at the very left
+prefixes = [f'{p} ' for p in prefixes] + prefixes
 prefixes += [p.title() for p in prefixes]
 bot = commands.Bot(command_prefix=prefixes, case_insensitive=True)
 bot.quotes = None

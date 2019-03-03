@@ -80,6 +80,7 @@ class Help(commands.Cog):
         """
         await ctx.send(await self.prep_cog_output(ctx, 'CMDS', 'Command Help'))
 
+    @commands.is_owner()
     @commands.command()
     async def devhelp(self, ctx):
         """
