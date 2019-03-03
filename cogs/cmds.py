@@ -71,7 +71,7 @@ class SourcePaginator:
         """
         Cycle through multiple pages using reactions.
         """
-        urls = self.cmds.choose_freecam_folder('_', return_urls=True)
+        urls = self.cmds.get_sources_and_links()
         paginator = commands.Paginator(prefix='**Available sources:**',
                                        suffix='')
 
@@ -112,10 +112,7 @@ class CMDS(commands.Cog):
 
         return url
 
-    def choose_freecam_folder(self, args, return_urls=False):
-        """
-        Chooses a folder to use in the image command.
-        """
+    def get_sources_and_links(self):
         freecam_path = os.path.join(os.getcwd(), 'images', 'Life_is_Strange')
         all_folders = [os.path.relpath(os.path.join(freecam_path, folder))
                        for folder in os.listdir(freecam_path)]
@@ -124,9 +121,14 @@ class CMDS(commands.Cog):
         for folder in all_folders:
             url = self.generate_folder_url(os.path.basename(folder))
             urls[url] = folder
-        if return_urls is True:
-            return urls
 
+        return urls
+
+    def choose_image_folder(self, args):
+        """
+        Chooses a folder to use in the image command.
+        """
+        urls = self.get_sources_and_links()
         if args:
             if len(args) == 1 and args[0].lower() == 'random':
                 return urls[random.choice(list(urls.keys()))]
@@ -145,19 +147,6 @@ class CMDS(commands.Cog):
                 chosen_url = random.choice(matched_urls)
                 chosen_folder = urls[chosen_url]
                 return chosen_folder
-
-    def get_freecam_sources(self, args):
-        """
-        Prepares an overview of available sources for the lis command.
-        """
-        urls = self.choose_freecam_folder(args, return_urls=True)
-        sorted_urls = sorted(list(urls.keys()))
-
-        output = '**Available sources:**\n'
-        for url in sorted_urls:
-            output += f'  <{url}>\n'
-
-        return output
 
     @staticmethod
     def apply_ini_markdown(quote):
@@ -374,12 +363,12 @@ class CMDS(commands.Cog):
             await source_paginator.paginate()
             return
 
-        chosen_folder = self.choose_freecam_folder(args)
+        chosen_folder = self.choose_image_folder(args)
         if chosen_folder is None:
             await ctx.send(f'Could not match a source based on `{" ".join(args)}`!')
             return
 
-        chosen_folder = self.choose_freecam_folder(args)
+        chosen_folder = self.choose_image_folder(args)
         chosen_pic = os.path.join(chosen_folder, random.choice(os.listdir(chosen_folder)))
         pic_base = os.path.basename(chosen_pic)
         author_url = self.generate_folder_url(os.path.basename(chosen_folder))
@@ -493,7 +482,7 @@ class CMDS(commands.Cog):
         available_chars = [char_ for char_ in matched_chars
                            if '&' in char_]
         if not available_chars:
-            await ctx.send(f'Could not match any single character for `{char}`.')
+            await ctx.send(f'Could not match any pair for `{char}`.')
             return
 
         chosen_char = self.choose_quote_char(available_chars, quotes)
