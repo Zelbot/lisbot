@@ -220,11 +220,9 @@ class CMDS(commands.Cog):
         return overview.strip()
 
     @staticmethod
-    def choose_quote_char(char, quotes_dict, weighted=False):
+    def get_quote_chars(char, quotes_dict):
         """
-        Chooses a character name to be used in the quotes command.
-        If weighted is True, the amount of quotes for each character
-        is taken into account when the choice is made.
+        Prepare a list of all matched characters for the quote commands
         """
         if char.count('&') > 1:  # Only two people per pair allowed, ever
             return None
@@ -266,14 +264,23 @@ class CMDS(commands.Cog):
                                if any(split_.startswith(tuple(char.split()))
                                       for split_ in name.split())]
 
-        # Also covers incorrect inputs, e.g. 'Max & Chloe &'
-        if not available_chars:  # No matching name found
+        # Can be an empty list of no match was found
+        return available_chars
+
+    @staticmethod
+    def choose_quote_char(characters, quotes_dict, weighted=False):
+        """
+        Chooses a character name to be used in the quotes command.
+        If weighted is True, the amount of quotes for each character
+        is taken into account when the choice is made.
+        """
+        if not characters:
             return None
         if weighted is False:
-            return random.choice(available_chars)
+            return random.choice(characters)
 
         chars = {name: list_ for name, list_ in quotes_dict.items()
-                 if name in available_chars}
+                 if name in characters}
         # Calculate a list of percentage-wise probabilities by dividing
         # the length of a single list through the sum of all lengths of all lists
         probabilities = [len(list_) / sum([len(l) for l in chars.values()])
@@ -324,23 +331,19 @@ class CMDS(commands.Cog):
         Posts a quote from the specified character.
         ##nl## Use `cp quote` to get an overview of all available characters.
         ##nl## Use `cp quote random` to get a random quote.
+        ##nl## Use `cp quote single/pair random/name` to ensure that
+        only the specified type of quote is chosen.
         ##nl## Usually, each character has the same chance to get picked.
         If you want to take the quote amount into account, use
         `cp quote weighted random/name` instead.
         """
-        # Make a copy of the global imported quotes dict
-        # and add extra quotes to the local (temporary) copy
-        # (extras variable is imported from quotes_extras.py)
-
         if char is None:
             overview = self.get_quote_char_overview(quotes, 'Available Characters')
             await ctx.send(overview)
             return
 
-        char = char.lower().title()
-        char = char.replace('And', '&')
-
-        chosen_char = self.choose_quote_char(char, quotes, weighted=weighted)
+        available_chars = self.get_quote_chars(char, quotes)
+        chosen_char = self.choose_quote_char(available_chars, quotes, weighted=weighted)
         if chosen_char is None:
             await ctx.send(f'`{char}` is not a valid character!')
             return
@@ -353,15 +356,76 @@ class CMDS(commands.Cog):
         await ctx.send(output)
 
     @quote.command(name='weighted', hidden=True)
-    async def quote_weighted(self, ctx, char: utils.QuoteChar=None):
+    async def quote_weighted(self, ctx, *, char: utils.QuoteChar=None):
         """
         Invoke the quote command, but change the normally unreachable
-        `weighted` param to True, so the choice also takes into account
-        the amount of quotes that each character has.
+        `weighted` param to True, so the choice takes the amount
+        of quotes that each character has into account.
         """
         if char is None:
             return
         await utils.invoke_with_checks(ctx, 'quote', char=char, weighted=True)
+
+    @quote.command(name='single', hidden=True)
+    async def quote_single(self, ctx, *, char: utils.QuoteChar=None):
+        """
+        Works the same as the quote command, except for ensuring
+        that only quotes of single characters get used.
+        """
+        if char is None:
+            return
+        if char.split()[0] == 'Weighted':
+            await ctx.send('The `quote single` command does'
+                           ' not support the weighted option.')
+            return
+
+        matched_chars = self.get_quote_chars(char, quotes)
+        if matched_chars is None:
+            await ctx.send(f'`{char}` is not a valid character!')
+            return
+
+        available_chars = [char_ for char_ in matched_chars
+                           if '&' not in char_]
+        if not available_chars:
+            await ctx.send(f'Could not match any single character for `{char}`.')
+            return
+
+        chosen_char = self.choose_quote_char(available_chars, quotes)
+        quote = random.choice(quotes[chosen_char])
+        output = f'```{quote}```\n    `- {chosen_char}`'
+
+        await ctx.send(output)
+
+    @quote.command(name='double', aliases=['pair'])
+    async def quote_double(self, ctx, *, char: utils.QuoteChar=None):
+        """
+        Works the same as the quote command, except for ensuring
+        that only quotes of pairs get used.
+        """
+        if char is None:
+            return
+        if char.split()[0] == 'Weighted':
+            await ctx.send('The `quote pair` command does'
+                           ' not support the weighted option.')
+            return
+
+        matched_chars = self.get_quote_chars(char, quotes)
+        if matched_chars is None:
+            await ctx.send(f'`{char}` is not a valid character!')
+            return
+
+        available_chars = [char_ for char_ in matched_chars
+                           if '&' in char_]
+        if not available_chars:
+            await ctx.send(f'Could not match any single character for `{char}`.')
+            return
+
+        chosen_char = self.choose_quote_char(available_chars, quotes)
+        quote = random.choice(quotes[chosen_char])
+        quote = self.apply_ini_markdown(quote)
+        output = f'```{quote}```\n    `- {chosen_char}`'
+
+        await ctx.send(output)
 
     @commands.command(aliases=['board'])
     async def about(self, ctx):

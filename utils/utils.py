@@ -128,8 +128,6 @@ async def invoke_with_checks(ctx, command, *args, **kwargs):
     """
     Execute the specified command only if all checks pass.
     """
-    print(args)
-    print(kwargs)
     if type(command) not in [types.FunctionType, types.MethodType, commands.Command, str]:
         raise ValueError(f'Argument for parameter <command> is invalid.')
 
