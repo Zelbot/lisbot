@@ -140,9 +140,15 @@ class CMDS(commands.Cog):
         return url
 
     def get_sources_and_links(self):
-        freecam_path = os.path.join(os.getcwd(), 'images', 'Life_is_Strange')
-        all_folders = [os.path.relpath(os.path.join(freecam_path, folder))
-                       for folder in os.listdir(freecam_path)]
+        """
+        Map generated URLs to the name of the folder which they're saved in.
+        Note that the images are located in another project's structure
+        so we have to go with that project's path here (images_path)
+        """
+        images_path = os.path.join(os.path.abspath('../zelbot/'),
+                                   'images', 'Life_is_Strange')
+        all_folders = [os.path.relpath(os.path.join(images_path, folder))
+                       for folder in os.listdir(images_path)]
 
         urls = {}
         for folder in all_folders:

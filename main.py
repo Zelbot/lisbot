@@ -141,8 +141,5 @@ if __name__ == '__main__':
             exc = f'{type(err).__name__}: {err}'
             print(f'Failed to load extension {extension}\n{exc}')
 
-    # Images are in the zelbot directory, we just
-    # chdir there to avoid copying the files to this dir
-    os.chdir('../zelbot')
     change_status_task = bot.loop.create_task(change_status())
     bot.run(config.TOKEN)
