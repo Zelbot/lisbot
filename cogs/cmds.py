@@ -536,14 +536,14 @@ class CMDS(commands.Cog):
         embed.add_field(name='Developer',
                         value=str(app_info.owner),
                         inline=True)
-        embed.add_field(name='Prog. Language',
-                        value='Python',
-                        inline=True)
         embed.add_field(name='Need Help?',
                         value='Use cphelp',
                         inline=True)
         embed.add_field(name='Avatar Author',
                         value='[dog_gum](https://twitter.com/dog_gum)',
+                        inline=True)
+        embed.add_field(name='Invite Link',
+                        value=f'[Click here]({config.invite_link})',
                         inline=True)
         embed.set_image(url=config.junkyard_url)
         embed.set_footer(text='https://github.com/Zelbot')
