@@ -75,7 +75,7 @@ async def get_bot_error(ctx, exc):
         return None
 
     error_embed = discord.Embed(
-        title=f':x: A {type(exc).__name__} error occurred',
+        # title=f':x: A {type(exc).__name__} error occurred',
         color=get_role_color(ctx.me)[1],
         description=(str(exc))
     )
