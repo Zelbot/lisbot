@@ -417,6 +417,24 @@ class CMDS(commands.Cog):
 
         await upload_message.delete()
 
+    # @image.before_invoke
+    # async def before_image(self, ctx):
+    #     """
+    #     Images are in the zelbot directory, so we cd there.
+    #     """
+    #     if ctx.args[2:]:  # Source was specified
+    #         if os.path.basename(os.getcwd()) != 'lis-bot':
+    #             os.chdir('../zelbot/')
+    #
+    # @image.after_invoke
+    # async def after_image(self, ctx):
+    #     """
+    #     Cd back to the main directory after uploading an image.
+    #     """
+    #     if ctx.args[2:]:  # Source was specified
+    #         if os.path.basename(os.getcwd()) != 'lis-bot':
+    #             os.chdir('../lis-bot/')
+
     @commands.group(aliases=['quotes'], invoke_without_command=True)
     async def quote(self, ctx, *, char: utils.QuoteChar=None, weighted=False):
         """
