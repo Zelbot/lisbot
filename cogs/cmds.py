@@ -13,19 +13,20 @@ from utils import utils
 from data.quotes import quotes
 
 
-class SourcePaginator:
+class OverviewPaginator:
     """
     Paginator to make the image sources output more readable.
     """
-    __slots__ = ('bot', 'ctx', 'cmds', 'cog', 'index')
+    __slots__ = ('bot', 'ctx', 'cmds', 'paginator', 'index')
 
     def __init__(self, bot, ctx, cmds):
         self.bot = bot
         self.ctx = ctx
         self.cmds = cmds
+        self.paginator = commands.Paginator()
         self.index = 0
 
-    async def await_pagination_reaction(self, message, paginator):
+    async def await_pagination_reaction(self, message):
         """
         Enable reactions so that a user can flip between pages
         of a cog's command help overview.
@@ -52,24 +53,24 @@ class SourcePaginator:
                 await message.remove_reaction('➡', self.ctx.me)
         else:
             index_before = self.index
-            if str(reaction) == '➡' and self.index < len(paginator.pages) - 1:
+            if str(reaction) == '➡' and self.index < len(self.paginator.pages) - 1:
                 self.index += 1
             elif str(reaction) == '⬅' and self.index > 0:
                 self.index -= 1
 
             if index_before != self.index:
                 try:
-                    await message.edit(content=paginator.pages[self.index])
+                    await message.edit(content=self.paginator.pages[self.index])
                 except discord.NotFound:
                     return
                 if self.ctx.channel.permissions_for(self.ctx.me).manage_messages is True:
                     await message.remove_reaction(reaction, user)
             # Reset timer, wait for next pagination reaction
-            await self.await_pagination_reaction(message, paginator)
+            await self.await_pagination_reaction(message)
 
-    async def paginate(self):
+    async def prep_image_source_paginator(self):
         """
-        Cycle through multiple pages using reactions.
+        Prepare a paginator for the sources of the image command.
         """
         urls = self.cmds.get_sources_and_links()
         paginator = commands.Paginator(prefix='**Available sources:**',
@@ -81,9 +82,35 @@ class SourcePaginator:
                 paginator.close_page()
             paginator.add_line(f'  <{url}>')
 
-        page = await self.ctx.send(paginator.pages[0])
-        if len(paginator.pages) > 1:
-            await self.await_pagination_reaction(page, paginator)
+        self.paginator = paginator
+
+    async def prep_quote_char_paginator(self):
+        """
+        Prepare a paginator for the character overview of the quote command.
+        """
+        single_chars = self.cmds.get_single_char_overview(quotes)
+        char_pairs = self.cmds.get_char_pair_overview(quotes)
+        paginator = commands.Paginator(prefix=f'```css\n[Available Characters]\n```',
+                                       suffix='')
+
+        for overview in [single_chars, char_pairs]:
+            paginator.add_line('```ml')
+
+            for line in overview.split('\n'):
+                paginator.add_line(line)
+
+            paginator.add_line('```')
+            paginator.close_page()
+
+        self.paginator = paginator
+
+    async def paginate(self):
+        """
+        Cycle through multiple pages using reactions.
+        """
+        page = await self.ctx.send(self.paginator.pages[0])
+        if len(self.paginator.pages) > 1:
+            await self.await_pagination_reaction(page)
 
 
 class CMDS(commands.Cog):
@@ -358,8 +385,8 @@ class CMDS(commands.Cog):
         ##nl## Use `cp image random` to get a random image.
         """
         if not args:
-            # await ctx.send(self.get_freecam_sources(args))
-            source_paginator = SourcePaginator(self.bot, ctx, self)
+            source_paginator = OverviewPaginator(self.bot, ctx, self)
+            await source_paginator.prep_image_source_paginator()
             await source_paginator.paginate()
             return
 
@@ -403,8 +430,9 @@ class CMDS(commands.Cog):
         `cp quote weighted random/name` instead.
         """
         if char is None:
-            overview = self.get_quote_char_overview(quotes, 'Available Characters')
-            await ctx.send(overview)
+            source_paginator = OverviewPaginator(self.bot, ctx, self)
+            await source_paginator.prep_quote_char_paginator()
+            await source_paginator.paginate()
             return
 
         available_chars = self.get_quote_chars(char, quotes)
