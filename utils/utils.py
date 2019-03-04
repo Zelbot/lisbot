@@ -60,7 +60,7 @@ async def get_bot_error(ctx, exc):
         commands.errors.BadArgument,
         commands.NotOwner,
         discord.NotFound,
-        discord.Forbidden
+        discord.errors.Forbidden
     ]
     # Make the owner exempt from cooldowns
     if isinstance(exc, commands.errors.CommandOnCooldown):
@@ -104,7 +104,7 @@ async def get_logging_error(ctx, exc):
         commands.errors.MissingRequiredArgument,
         commands.errors.TooManyArguments,
         discord.NotFound,
-        discord.Forbidden
+        discord.errors.Forbidden
     ]
     if type(exc) in ignored_exception_types:
         return None
