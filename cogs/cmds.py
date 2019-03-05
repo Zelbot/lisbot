@@ -568,7 +568,7 @@ class CMDS(commands.Cog):
                         value='Use cphelp',
                         inline=True)
         embed.add_field(name='Avatar Author',
-                        value='[dog_gum](https://twitter.com/dog_gum)',
+                        value=f'[{config.avatar_author}]({config.avatar_author_link})',
                         inline=True)
         embed.add_field(name='Invite Link',
                         value=f'[Click here]({config.invite_link})',
