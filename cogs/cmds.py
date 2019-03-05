@@ -162,24 +162,25 @@ class CMDS(commands.Cog):
         Chooses a folder to use in the image command.
         """
         urls = self.get_sources_and_links()
-        if args:
-            if len(args) == 1 and args[0].lower() == 'random':
-                return urls[random.choice(list(urls.keys()))]
 
-            # Remove args that do not contain letters or numbers
-            # to prevent matching things like singular periods
-            alnum_args = [arg for arg in args
-                          if any(letter in string.ascii_letters for letter in arg)
-                          or any(letter in '0123456789' for letter in arg)]
+        if len(args) == 1 and args[0].lower() == 'random':
+            return random.choice(list(urls.keys()))
 
-            # Match based on URL instead of folder name
-            matched_urls = [url for url in urls
-                            if any(arg.lower() in url.lower()
-                                   for arg in alnum_args)]
-            if matched_urls:
-                chosen_url = random.choice(matched_urls)
-                chosen_folder = urls[chosen_url]
-                return chosen_folder
+        # Remove args that do not contain letters or numbers
+        # to prevent matching things like singular periods
+        alnum_args = [arg for arg in args
+                      if any(letter in string.ascii_letters for letter in arg)
+                      or any(letter in '0123456789' for letter in arg)]
+
+        # Match based on URL instead of folder name
+        matched_urls = [url for url in urls
+                        if any(arg.lower() in url.lower()
+                               for arg in alnum_args)]
+        if matched_urls:
+            chosen_url = random.choice(matched_urls)
+            chosen_folder = urls[chosen_url]
+            return chosen_folder
+        return None
 
     @staticmethod
     def apply_ini_markdown(quote):
@@ -372,6 +373,9 @@ class CMDS(commands.Cog):
         """
         if not characters:
             return None
+        if len(characters) == 1:
+            return characters[0]
+
         if weighted is False:
             return random.choice(characters)
 
