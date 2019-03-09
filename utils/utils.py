@@ -1,5 +1,6 @@
 # BUILTIN
 import asyncio
+import random
 import types
 # PIP
 import discord
@@ -123,6 +124,36 @@ class QuoteChar(commands.Converter):
                              f'for argument "{argument}", expected type str')
 
         return await self.format_name(argument)
+
+
+class LiSQuery(commands.Converter):
+    """
+    Convert a DeviantArt search query to guarantee
+    a result about Life is Strange
+    """
+    @staticmethod
+    async def format_query(query):
+        """
+        Put either 'lis' or 'lifeisstrange' into the query,
+        if not already present
+        """
+        query = ' '.join(query.split())  # Get rid of newlines
+        query = query.lower()
+
+        if 'lis' not in query and 'lifeisstrange' not in query:
+            if random.randint(0, 1) == 1:
+                query = f'{query} lis'
+            else:
+                query = f'{query} lifeisstrange'
+
+        return query
+
+    async def convert(self, ctx, argument):
+        if not isinstance(argument, str):
+            raise ValueError(f'Passed type {type(argument).__name__} '
+                             f'for argument "{argument}", expected type str')
+
+        return await self.format_query(argument)
 
 
 def get_role_color(member):

@@ -1,8 +1,13 @@
+# BUILTIN
 import random
+# PIP
 import deviantart
 import discord
 from discord.ext import commands
+# CUSTOM
 import config
+import utils
+
 
 da_client = deviantart.Api(config.da_client_id, config.da_client_secret)
 
@@ -17,7 +22,7 @@ class DeviantArt(commands.Cog):
         self.post_limit = 20  # How many images get returned per iteration
 
     @staticmethod
-    async def get_max_offset(endpoint, query):
+    async def get_estimated_total(endpoint, query):
         """
         Get the maximum offset by firing off a request with
         an offset of 50000 (the allowed maximum in this module).
@@ -68,15 +73,6 @@ class DeviantArt(commands.Cog):
         return da_client.browse(endpoint='newest', limit=limit,
                                 offset=offset, q=query)
 
-    @staticmethod
-    async def browse_tags(tag, limit=20, offset=0):
-        """
-        Wrapper to browse DeviantArt /tags
-        to keep the function call uniform.
-        """
-        return da_client.browse(endpoint='tags', limit=limit,
-                                offset=offset, tag=tag)
-
     async def search_deviations(self, ctx, browse_func, query, *args, **kwargs):
         """
         Function to search for deviations, used at the start of commands.
@@ -92,8 +88,8 @@ class DeviantArt(commands.Cog):
         deviations = await self.gather_deviations(browse_func, query, get=get,
                                                   *args, **kwargs)
         if not deviations:  # Search returned an empty list
-            await ctx.send(f'I searched through {self.search_limit * self.post_limit}'
-                           f' {get.upper()}-only posts,'
+            await ctx.send(f'I searched {self.search_limit * self.post_limit}'
+                           f' posts for {get.upper()} content,'
                            ' but could not find anything.')
             await searching_msg.delete()
 
@@ -143,8 +139,7 @@ class DeviantArt(commands.Cog):
         DeviantArt.Api().browse based on whether
         or not the content is flagged as mature.
         Also only return deviations whose content attribute
-        is not None, as we need the content's source
-        and dimensions.
+        is not None, as it is needed later on.
         """
         if get == 'all':
             return [d for d in deviations if d.content is not None]
@@ -181,26 +176,30 @@ class DeviantArt(commands.Cog):
         return embed
 
     @commands.group(aliases=['da'], invoke_without_command=True)
-    async def deviantart(self, ctx, tag):
+    async def deviantart(self, ctx, *, query: utils.LiSQuery=None):
         """
-        Searches through various sections of DeviantArt.
-        ##nl## Available sections are: `popular`, `newest`, `tag`
-        ##nl## Usage: `cp deviantart section term`, i.e.
-        `cp deviantart tag lis`
-        ##nl## If no section is specified, this defaults to tag.
-        ##nl## Note that the search for `tags` can only ever be one word.
-        This does not apply to the popular and newest search.
+        Searches the specified term on DeviantArt.
+        ##nl## This defaults to the
+        popular section, but you may search through the latest
+        new deviations as well.
+        ##nl## Usage: `cp deviantart (newest) term`
         """
-        ctx.command = self.bot.get_command('deviantart tags')
-        await ctx.invoke(ctx.command, tag)
+        if query is None:
+            return
+
+        ctx.command = self.bot.get_command('deviantart popular')
+        await utils.invoke_with_checks(ctx, ctx.command, query=query)
 
     @deviantart.command(name='popular', aliases=['pop'], hidden=True)
-    async def _deviantart_popular(self, ctx, *, query):
+    async def _deviantart_popular(self, ctx, *, query: utils.LiSQuery=None):
         """
         Query a search and post the result
         for the /popular section.
         """
-        max_offset = await self.get_max_offset(ctx.command.name, query)
+        if query is None:
+            return
+
+        max_offset = await self.get_estimated_total(ctx.command.name, query)
         random_offset = await self.choose_random_offset(max_offset)
 
         searching_msg, deviations = await self.search_deviations(
@@ -213,32 +212,17 @@ class DeviantArt(commands.Cog):
         await self.post_random_deviation(ctx, searching_msg, deviations)
 
     @deviantart.command(name='newest', aliases=['new'], hidden=True)
-    async def _deviantart_newest(self, ctx, *, query):
+    async def _deviantart_newest(self, ctx, *, query: utils.LiSQuery=None):
         """
         Query a search and post the result
         for the /newest section.
         """
-        searching_msg, deviations = await self.search_deviations(
-            ctx, self.browse_newest, ctx.command.name, query,
-            limit=self.post_limit
-        )
-        if deviations is None:
+        if query is None:
             return
 
-        await self.post_random_deviation(ctx, searching_msg, deviations)
-
-    @deviantart.command(name='tags', aliases=['tag'], hidden=True)
-    async def _deviantart_tags(self, ctx, tag):
-        """
-        Query a search and post the result
-        for the /tags section.
-        """
-        max_offset = await self.get_max_offset(ctx.command.name, tag)
-        random_offset = await self.choose_random_offset(max_offset)
-
         searching_msg, deviations = await self.search_deviations(
-            ctx, self.browse_tags, tag,
-            limit=self.post_limit, offset=random_offset
+            ctx, self.browse_newest, query,
+            limit=self.post_limit
         )
         if deviations is None:
             return
