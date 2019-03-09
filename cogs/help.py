@@ -78,7 +78,22 @@ class Help(commands.Cog):
         """
         Display help information about the commands in the CMDS cog.
         """
-        await ctx.send(await self.prep_cog_output(ctx, 'CMDS', 'Command Help'))
+        help_cogs = ['DeviantArt', 'General', 'Images', 'Quotes']
+        cmds = {}
+        cogs = {}
+        output = f'```md\n<{ctx.me.name.split()[0]} Command Help>```\n'
+
+        for cog in help_cogs:
+            cogs[self.bot.cogs[cog]] = cog
+            for command in self.bot.cogs[cog].get_commands():
+                cmds[command.name] = command
+
+        for cmd_name in sorted(list(cmds.keys())):
+            output += self.prep_doc_and_aliases(cogs[cmds[cmd_name].cog],
+                                                cmds[cmd_name])
+            output += '\n\n'
+
+        await ctx.send(output)
 
     @commands.is_owner()
     @commands.command()
