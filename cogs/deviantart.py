@@ -16,9 +16,6 @@ class DeviantArt(commands.Cog):
         self.search_limit = 5  # How many times we look for images per command
         self.post_limit = 20  # How many images get returned per iteration
 
-    async def cog_check(self, ctx):
-        return await ctx.bot.is_owner(ctx.author)
-
     @staticmethod
     async def get_max_offset(endpoint, query):
         """
