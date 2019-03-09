@@ -1,8 +1,109 @@
 # BUILTIN
+import asyncio
 import types
 # PIP
 import discord
 from discord.ext import commands
+
+
+class OverviewPaginator:
+    """
+    Paginator to make the image sources output more readable.
+    """
+    __slots__ = ('bot', 'ctx', 'cog', 'paginator', 'index')
+
+    def __init__(self, bot, ctx, cog):
+        self.bot = bot
+        self.ctx = ctx
+        self.cog = cog
+        self.paginator = commands.Paginator()
+        self.index = 0
+
+    async def await_pagination_reaction(self, message):
+        """
+        Enable reactions so that a user can flip between pages
+        of a cog's command help overview.
+        """
+        await message.add_reaction('⬅')
+        await message.add_reaction('➡')
+
+        def check(reaction_, user_):
+            return user_.id == self.ctx.author.id \
+                   and str(reaction_) in ['➡', '⬅'] \
+                   and reaction_.message.id == message.id
+
+        try:
+            reaction, user = await self.bot.wait_for('reaction_add',
+                                                     timeout=30.0,
+                                                     check=check)
+        except asyncio.TimeoutError:
+            try:
+                await message.clear_reactions()
+            except discord.NotFound:
+                return
+            except discord.Forbidden:
+                await message.remove_reaction('⬅', self.ctx.me)
+                await message.remove_reaction('➡', self.ctx.me)
+        else:
+            index_before = self.index
+            if str(reaction) == '➡' and self.index < len(self.paginator.pages) - 1:
+                self.index += 1
+            elif str(reaction) == '⬅' and self.index > 0:
+                self.index -= 1
+
+            if index_before != self.index:
+                try:
+                    await message.edit(content=self.paginator.pages[self.index])
+                except discord.NotFound:
+                    return
+                if self.ctx.channel.permissions_for(self.ctx.me).manage_messages is True:
+                    await message.remove_reaction(reaction, user)
+            # Reset timer, wait for next pagination reaction
+            await self.await_pagination_reaction(message)
+
+    async def prep_image_source_paginator(self):
+        """
+        Prepare a paginator for the sources of the image command.
+        """
+        urls = self.cog.get_sources_and_links()
+        paginator = commands.Paginator(prefix='**Available sources:**',
+                                       suffix='')
+
+        for index, url in enumerate(urls.keys()):
+            # Close each page when it has reached 3 commands
+            if index % 15 == 0 and index > 0:
+                paginator.close_page()
+            paginator.add_line(f'  <{url}>')
+
+        self.paginator = paginator
+
+    async def prep_quote_char_paginator(self):
+        """
+        Prepare a paginator for the character overview of the quote command.
+        """
+        single_chars = self.cog.get_single_char_overview()
+        char_pairs = self.cog.get_char_pair_overview()
+        paginator = commands.Paginator(prefix=f'```css\n[Available Characters]\n```',
+                                       suffix='')
+
+        for overview in [single_chars, char_pairs]:
+            paginator.add_line('```ml')
+
+            for line in overview.split('\n'):
+                paginator.add_line(line)
+
+            paginator.add_line('```')
+            paginator.close_page()
+
+        self.paginator = paginator
+
+    async def paginate(self):
+        """
+        Cycle through multiple pages using reactions.
+        """
+        page = await self.ctx.send(self.paginator.pages[0])
+        if len(self.paginator.pages) > 1:
+            await self.await_pagination_reaction(page)
 
 
 class QuoteChar(commands.Converter):
