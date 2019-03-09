@@ -66,36 +66,6 @@ async def cmd_has_cd(ctx):
     return True
 
 
-@bot.check
-async def has_attach_files_perms(ctx):
-    """
-    Alert the user about missing Attach Files permissions
-    which would break the image command.
-    """
-    if ctx.command.name != 'image':
-        return True
-
-    if ctx.channel.permissions_for(ctx.me).attach_files is False:
-        await ctx.send('I need `Attach Files` permissions to work properly!')
-        return False
-    return True
-
-
-@bot.check
-async def has_add_reactions_perms(ctx):
-    """
-    Alert the user about missing Add Reactions permissions
-    which would make pagination nearly impossible.
-    """
-    if ctx.command.name not in ['image', 'quote']:
-        return True
-
-    if ctx.channel.permissions_for(ctx.me).add_reactions is False:
-        await ctx.send('I need `Add Reactions` permissions to work properly!')
-        return False
-    return True
-
-
 @bot.event
 async def on_error(event, *args, **kwargs):
     """
