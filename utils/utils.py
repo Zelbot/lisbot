@@ -134,17 +134,16 @@ class LiSQuery(commands.Converter):
     @staticmethod
     async def format_query(query):
         """
-        Put either 'lis' or 'lifeisstrange' into the query,
-        if not already present
+        Replace 'lis' with 'lifeisstrange'
+        or put into the query if not already present.
         """
         query = ' '.join(query.split())  # Get rid of newlines
         query = query.lower()
 
-        if 'lis' not in query and 'lifeisstrange' not in query:
-            if random.randint(0, 1) == 1:
-                query = f'{query} lis'
-            else:
-                query = f'{query} lifeisstrange'
+        if 'lis' in query:
+            query = query.replace('lis', 'lifeisstrange')
+        elif 'lifeisstrange' not in query:
+            query = f'{query} lifeisstrange'
 
         return query
 
