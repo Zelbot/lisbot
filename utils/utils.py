@@ -140,7 +140,7 @@ class LiSQuery(commands.Converter):
         query = ' '.join(query.split())  # Get rid of newlines
         query = query.lower()
 
-        if 'lis' in query:
+        if 'lis' in query.split():
             query = query.replace('lis', 'lifeisstrange')
         elif 'lifeisstrange' not in query:
             query = f'{query} lifeisstrange'
