@@ -29,9 +29,10 @@ class DeviantArt(commands.Cog):
         If this is the case, the client is refreshed and the command
         will get reinvoked.
         """
-        if isinstance(exc, deviantart.api.DeviantartError):
-            wrapped_err = exc.args[0]
+        if hasattr(exc, 'original') and isinstance(exc.original, deviantart.api.DeviantartError):
+            wrapped_err = exc.original.args[0]
             if isinstance(wrapped_err, urllib.error.HTTPError) and wrapped_err.code == 401:
+                await ctx.channel.trigger_typing()
                 await self.refresh_client()
                 await ctx.reinvoke()
 

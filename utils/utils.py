@@ -1,7 +1,7 @@
 # BUILTIN
 import asyncio
-import random
 import types
+import urllib.error
 # PIP
 import discord
 from discord.ext import commands
@@ -202,6 +202,12 @@ async def get_bot_error(ctx, exc):
                 await ctx.reinvoke()
                 return
 
+    # Ignore 401 HTTPErrors caused by the DA API access token expiring
+    if isinstance(exc, commands.errors.CommandInvokeError):
+        wrapped_err = exc.original.args[0]
+        if isinstance(wrapped_err, urllib.error.HTTPError) and wrapped_err.code == 401:
+            return None
+
     if type(exc) in ignored_exception_types:
         return None
 
@@ -237,6 +243,12 @@ async def get_logging_error(ctx, exc):
         discord.NotFound,
         discord.errors.Forbidden
     ]
+    # Ignore 401 HTTPErrors caused by the DA API access token expiring
+    if isinstance(exc, commands.errors.CommandInvokeError):
+        wrapped_err = exc.original.args[0]
+        if isinstance(wrapped_err, urllib.error.HTTPError) and wrapped_err.code == 401:
+            return None
+
     if type(exc) in ignored_exception_types:
         return None
 
