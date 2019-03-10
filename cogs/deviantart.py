@@ -1,4 +1,5 @@
 # BUILTIN
+import functools
 import random
 import urllib.error
 # PIP
@@ -43,8 +44,7 @@ class DeviantArt(commands.Cog):
         self.da_client = deviantart.Api(config.da_client_id,
                                         config.da_client_secret)
 
-    @staticmethod
-    async def get_estimated_total(endpoint, query):
+    async def get_estimated_total(self, endpoint, query, **kwargs):
         """
         Get the maximum offset by firing off a request with
         an offset of 50000 (the allowed maximum in this module).
@@ -52,13 +52,15 @@ class DeviantArt(commands.Cog):
         likely to return sooner, as there is a high chance
         of no posts being found.
         """
-        get_data = {'offset': 50000}
+        kwargs['offset'] = 50000
         if endpoint == 'tags':
-            get_data['tag'] = query
+            kwargs['tag'] = query
         else:
-            get_data['q'] = query
+            kwargs['q'] = query
 
-        res = da_client._req(f'/browse/{endpoint}', get_data=get_data)
+        partial = functools.partial(self.da_client._req,
+                                    f'/browse/{endpoint}', get_data=kwargs)
+        res = await self.bot.loop.run_in_executor(None, partial)
         return res['estimated_total']
 
     async def choose_random_offset(self, num):
@@ -77,23 +79,25 @@ class DeviantArt(commands.Cog):
         # i.e. range(0, 20, 5) -> random.choice([0, 5, 10, 15])
         return random.choice(range(0, max_allowed_offset, self.post_limit))
 
-    @staticmethod
-    async def browse_popular(query, timerange='alltime', limit=20, offset=0):
+    async def browse_popular(self, query, timerange='alltime', limit=20, offset=0):
         """
         Wrapper to browse /popular deviations
         to keep the function call uniform.
         """
-        return da_client.browse(endpoint='popular', timerange=timerange,
-                                limit=limit, offset=offset, q=query)
+        partial = functools.partial(self.da_client.browse,
+                                    endpoint='popular', timerange=timerange,
+                                    limit=limit, offset=offset, q=query)
+        return await self.bot.loop.run_in_executor(None, partial)
 
-    @staticmethod
-    async def browse_newest(query, limit=20, offset=0):
+    async def browse_newest(self, query, limit=20, offset=0):
         """
         Wrapper to browse /newest deviations
         to keep the function call uniform.
         """
-        return da_client.browse(endpoint='newest', limit=limit,
-                                offset=offset, q=query)
+        partial = functools.partial(self.da_client.browse,
+                                    endpoint='newest', limit=limit,
+                                    offset=offset, q=query)
+        return await self.bot.loop.run_in_executor(None, partial)
 
     async def search_deviations(self, ctx, browse_func, query, *args, **kwargs):
         """
@@ -126,8 +130,8 @@ class DeviantArt(commands.Cog):
         and return all deviations that passed the checks
         of the filter_deviations method.
         """
-        get = kwargs.pop('get')
         deviations = []
+        get = kwargs.pop('get')
         res = await browse_func(*args, **kwargs)
 
         for i in range(self.search_limit):
@@ -213,7 +217,7 @@ class DeviantArt(commands.Cog):
         await utils.invoke_with_checks(ctx, ctx.command, query=query)
 
     @deviantart.command(name='popular', aliases=['pop'], hidden=True)
-    async def _deviantart_popular(self, ctx, *, query: utils.LiSQuery=None):
+    async def _deviantart_popular(self, ctx, *, query: utils.LiSQuery=None, timerange='alltime'):
         """
         Query a search and post the result
         for the /popular section.
@@ -221,12 +225,13 @@ class DeviantArt(commands.Cog):
         if query is None:
             return
 
-        max_offset = await self.get_estimated_total(ctx.command.name, query)
+        max_offset = await self.get_estimated_total(ctx.command.name, query,
+                                                    timerange=timerange)
         random_offset = await self.choose_random_offset(max_offset)
 
         searching_msg, deviations = await self.search_deviations(
             ctx, self.browse_popular, query,
-            timerange='alltime', limit=self.post_limit, offset=random_offset
+            timerange=timerange, limit=self.post_limit, offset=random_offset
         )
         if deviations is None:
             return
