@@ -114,8 +114,9 @@ class DeviantArt(commands.Cog):
         deviations = await self.gather_deviations(browse_func, query, get=get,
                                                   *args, **kwargs)
         if not deviations:  # Search returned an empty list
-            await ctx.send(f'I searched {self.search_limit * self.post_limit}'
-                           f' posts for {get.upper()} content,'
+            await ctx.send('I attempted to search through up to'
+                           f' {self.search_limit * self.post_limit} posts'
+                           f' for {get.upper()} content,'
                            ' but could not find anything.')
             await searching_msg.delete()
 
@@ -209,6 +210,9 @@ class DeviantArt(commands.Cog):
         popular section, but you may search through the latest
         new deviations as well.
         ##nl## Usage: `cp deviantart (newest) term`
+        ##nl## Note that this relies on the author properly
+        tagging their work. This means that sometimes unrelated
+        results will come up, which is unavoidable.
         """
         if query is None:
             return
