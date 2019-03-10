@@ -1,5 +1,6 @@
 # BUILTIN
 import random
+import urllib.error
 # PIP
 import deviantart
 import discord
@@ -9,17 +10,38 @@ import config
 import utils
 
 
-da_client = deviantart.Api(config.da_client_id, config.da_client_secret)
-
-
 class DeviantArt(commands.Cog):
 
-    __slots__ = ('bot', 'search_limit', 'post_limit')
+    __slots__ = ('bot', 'search_limit', 'post_limit', 'da_client')
 
     def __init__(self, bot):
         self.bot = bot
         self.search_limit = 5  # How many times we look for images per command
         self.post_limit = 20  # How many images get returned per iteration
+        self.da_client = deviantart.Api(config.da_client_id,
+                                        config.da_client_secret)
+
+    async def cog_command_error(self, ctx, exc):
+        """
+        Catch 401 Unauthorized HTTPErrors which occurs when
+        the access token has become invalidated.
+        If this is the case, the client is refreshed and the command
+        will get reinvoked.
+        """
+        if isinstance(exc, deviantart.api.DeviantartError):
+            wrapped_err = exc.args[0]
+            if isinstance(wrapped_err, urllib.error.HTTPError) and wrapped_err.code == 401:
+                await self.refresh_client()
+                await ctx.reinvoke()
+
+    async def refresh_client(self):
+        """
+        The client's authorization is invalidated automatically
+        after an hour, so we need to refresh it (just refreshing the
+        access token using .refresh_token does not work).
+        """
+        self.da_client = deviantart.Api(config.da_client_id,
+                                        config.da_client_secret)
 
     @staticmethod
     async def get_estimated_total(endpoint, query):
