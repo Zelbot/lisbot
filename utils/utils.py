@@ -249,6 +249,9 @@ async def get_logging_error(ctx, exc):
         if isinstance(wrapped_err, urllib.error.HTTPError) and wrapped_err.code == 401:
             return None
 
+    if ctx.command == ctx.bot.get_command('jsk py'):
+        return None
+
     if type(exc) in ignored_exception_types:
         return None
 
