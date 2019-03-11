@@ -169,16 +169,18 @@ class DeviantArt(commands.Cog):
         Also only return deviations whose content attribute
         is not None, as it is needed later on.
         """
+        filtered = [d for d in deviations
+                    if d.content is not None
+                    and d.author.username not in config.da_blacklisted_authors]
+
         if get == 'all':
-            return [d for d in deviations if d.content is not None]
-
+            return filtered
         if get == 'nsfw':
-            return [d for d in deviations if d.content is not None
-                                          and d.is_mature is True]
-
+            return [d for d in filtered if d.is_mature is True]
         if get == 'sfw':
-            return [d for d in deviations if d.content is not None
-                                          and d.is_mature is False]
+            return [d for d in filtered if d.is_mature is False]
+
+        raise ValueError('Bad argument for parameter <get>')
 
     @staticmethod
     async def embed_from_deviation(ctx, deviation):
