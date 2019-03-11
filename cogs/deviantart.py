@@ -107,24 +107,35 @@ class DeviantArt(commands.Cog):
         # i.e. range(0, 20, 5) -> random.choice([0, 5, 10, 15])
         return random.choice(range(0, max_allowed_offset, self.post_limit))
 
-    async def browse_popular(self, query, timerange='alltime', limit=20, offset=0):
+    async def browse_popular(self, ctx, query, timerange='alltime', limit=20, offset=0):
         """
         Wrapper to browse /popular deviations
         to keep the function call uniform.
         """
-        partial = functools.partial(self.da_client.browse,
-                                    endpoint='popular', timerange=timerange,
-                                    limit=limit, offset=offset, q=query)
+        partial = functools.partial(self.da_req,
+                                    prep_deviations=True,
+                                    mature_content=ctx.channel.is_nsfw(),
+                                    endpoint='popular',
+                                    timerange=timerange,
+                                    limit=limit,
+                                    offset=offset,
+                                    q=query)
+
         return await self.bot.loop.run_in_executor(None, partial)
 
-    async def browse_newest(self, query, limit=20, offset=0):
+    async def browse_newest(self, ctx, query, limit=20, offset=0):
         """
         Wrapper to browse /newest deviations
         to keep the function call uniform.
         """
-        partial = functools.partial(self.da_client.browse,
-                                    endpoint='newest', limit=limit,
-                                    offset=offset, q=query)
+        partial = functools.partial(self.da_req,
+                                    prep_deviations=True,
+                                    mature_content=ctx.channel.is_nsfw(),
+                                    endpoint='newest',
+                                    limit=limit,
+                                    offset=offset,
+                                    q=query)
+
         return await self.bot.loop.run_in_executor(None, partial)
 
     async def search_deviations(self, ctx, browse_func, query, *args, **kwargs):
@@ -139,7 +150,8 @@ class DeviantArt(commands.Cog):
         else:
             get = 'sfw'
 
-        deviations = await self.gather_deviations(browse_func, query, get=get,
+        deviations = await self.gather_deviations(browse_func, ctx, query,
+                                                  get=get,
                                                   *args, **kwargs)
         if not deviations:  # Search returned an empty list
             await ctx.send('I attempted to search through up to'
@@ -152,7 +164,7 @@ class DeviantArt(commands.Cog):
 
         return searching_msg, deviations
 
-    async def gather_deviations(self, browse_func, *args, **kwargs):
+    async def gather_deviations(self, browse_func, ctx, *args, **kwargs):
         """
         Execute the specified browse_* method as many
         times as specified by the search_limit attribute
@@ -161,7 +173,7 @@ class DeviantArt(commands.Cog):
         """
         deviations = []
         get = kwargs.pop('get')
-        res = await browse_func(*args, **kwargs)
+        res = await browse_func(ctx, *args, **kwargs)
 
         for i in range(self.search_limit):
             deviations += await self.filter_deviations(res['results'], get=get)
@@ -172,7 +184,7 @@ class DeviantArt(commands.Cog):
             if i != self.search_limit - 1:  # Prevent unnecessary API call on last iteration
                 if 'offset' in kwargs.keys():
                     kwargs['offset'] = res['next_offset']
-                res = await browse_func(*args, **kwargs)
+                res = await browse_func(ctx, *args, **kwargs)
 
         return deviations
 
