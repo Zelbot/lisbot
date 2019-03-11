@@ -46,18 +46,22 @@ class DeviantArt(commands.Cog):
         self.da_client = deviantart.Api(config.da_client_id,
                                         config.da_client_secret)
 
-    def da_req(self, endpoint, prep_deviations=False, **kwargs):
+    def da_req(self, endpoint, **kwargs):
         """
         Wrapper for deviantart.Api._req to go around the limitations
-        of the module's builtin functions like Api.browse
+        of the module's builtin functions like Api.browse.
         """
         if not endpoint.startswith('/browse/'):
             endpoint = f'/browse/{endpoint}'
 
-        res = self.da_client._req(endpoint, get_data=kwargs)
+        return self.da_client._req(endpoint, get_data=kwargs)
 
-        if prep_deviations is False:
-            return res
+    def da_browse(self, endpoint, **kwargs):
+        """
+        Utilize the da_req wrapper for a more accessible and general
+        browse function than the one offered by deviantart.Api.browse.
+        """
+        res = self.da_req(endpoint, **kwargs)
 
         # Copied from deviantart.api.py
         deviations = []
@@ -112,8 +116,7 @@ class DeviantArt(commands.Cog):
         Wrapper to browse /popular deviations
         to keep the function call uniform.
         """
-        partial = functools.partial(self.da_req,
-                                    prep_deviations=True,
+        partial = functools.partial(self.da_browse,
                                     mature_content=ctx.channel.is_nsfw(),
                                     endpoint='popular',
                                     timerange=timerange,
@@ -128,8 +131,7 @@ class DeviantArt(commands.Cog):
         Wrapper to browse /newest deviations
         to keep the function call uniform.
         """
-        partial = functools.partial(self.da_req,
-                                    prep_deviations=True,
+        partial = functools.partial(self.da_browse,
                                     mature_content=ctx.channel.is_nsfw(),
                                     endpoint='newest',
                                     limit=limit,
