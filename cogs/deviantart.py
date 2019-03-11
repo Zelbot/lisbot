@@ -220,7 +220,7 @@ class DeviantArt(commands.Cog):
                   f'x{deviation.content["height"]}'
                   f' - Safe search: enabled')
         if ctx.channel.is_nsfw() is True:
-            footer.replace('enabled', 'disabled')
+            footer = footer.replace('enabled', 'disabled')
 
         embed = discord.Embed(
             color=discord.Color.green(),
