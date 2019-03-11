@@ -4,6 +4,7 @@ import random
 import urllib.error
 # PIP
 import deviantart
+import deviantart.deviation
 import discord
 from discord.ext import commands
 # CUSTOM
@@ -45,6 +46,33 @@ class DeviantArt(commands.Cog):
         self.da_client = deviantart.Api(config.da_client_id,
                                         config.da_client_secret)
 
+    def da_req(self, endpoint, prep_deviations=False, **kwargs):
+        """
+        Wrapper for deviantart.Api._req to go around the limitations
+        of the module's builtin functions like Api.browse
+        """
+        if not endpoint.startswith('/browse/'):
+            endpoint = f'/browse/{endpoint}'
+
+        res = self.da_client._req(endpoint, get_data=kwargs)
+
+        if prep_deviations is False:
+            return res
+
+        # Copied from deviantart.api.py
+        deviations = []
+
+        for item in res['results']:
+            d = deviantart.deviation.Deviation()
+            d.from_dict(item)
+            deviations.append(d)
+
+        return {
+            'results' : deviations,
+            'has_more' : res['has_more'],
+            'next_offset' : res['next_offset']
+        }
+
     async def get_estimated_total(self, endpoint, query, **kwargs):
         """
         Get the maximum offset by firing off a request with
@@ -59,8 +87,7 @@ class DeviantArt(commands.Cog):
         else:
             kwargs['q'] = query
 
-        partial = functools.partial(self.da_client._req,
-                                    f'/browse/{endpoint}', get_data=kwargs)
+        partial = functools.partial(self.da_req, f'/browse/{endpoint}', **kwargs)
         res = await self.bot.loop.run_in_executor(None, partial)
         return res['estimated_total']
 
