@@ -1156,8 +1156,4 @@ quotes = {
 
 }
 
-# count = 0
-# for name, list in quotes.items():
-#     for quote in list:
-#         count += 1
-# print(count)
+# print(sum([len(v) for v in quotes.values()]))

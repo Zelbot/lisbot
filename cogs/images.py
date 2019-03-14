@@ -8,6 +8,7 @@ from discord.ext import commands
 # CUSTOM
 from utils import utils
 
+
 class Images(commands.Cog):
 
     __slots__ = ('bot', 'ip')
@@ -35,7 +36,7 @@ class Images(commands.Cog):
     @staticmethod
     def generate_folder_url(base_folder):
         """
-        Generate source URL based on the folder name.
+        Generate a source URL based on the folder name.
         """
         if base_folder.lower().startswith('reddit'):
             url = f'https://www.reddit.com/u/{base_folder.split("-")[1]}'

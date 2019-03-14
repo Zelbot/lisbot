@@ -18,7 +18,7 @@ class Quotes(commands.Cog):
     def apply_ini_markdown(quote):
         """
         Encloses character names from dialogue pairs in square brackets
-        and adds ini markdown to highlight them
+        and adds ini markdown to highlight them.
         """
         lines = quote.split('\n')
         for index, line in enumerate(lines[:]):
@@ -32,11 +32,9 @@ class Quotes(commands.Cog):
 
     def get_quote_char_overview(self, title):
         """
-        Displays an overview of the available characters
-        for the quotes command, formatted a little nicer
+        Constructs an overview of the available characters
+        for the quotes command, using markdown for highlighting.
         """
-        # Construct an overview string using markdown to color the text
-        # overview = f'```prolog\n{title}```\n'
         overview = f'```css\n[{title}]```\n'
         overview += '```ml\n'
         overview += self.get_single_char_overview() + '\n\n'
@@ -46,8 +44,7 @@ class Quotes(commands.Cog):
     @staticmethod
     def get_single_char_overview():
         """
-        Prepares an overview of all single characters
-        from the specified quotes dict
+        Prepares an overview of all single characters.
         """
         single_chars = sorted([char for char in quotes if '&' not in char])
         quotes_lens = [str(len(quotes[char])) for char in single_chars]
@@ -101,8 +98,7 @@ class Quotes(commands.Cog):
     @staticmethod
     def get_char_pair_overview():
         """
-        Prepares an overview of all dialogue pairs
-        from the specified quotes dict
+        Prepares an overview of all dialogue pairs.
         """
         char_pairs = sorted([char for char in quotes if '&' in char])
         quotes_lens = [str(len(quotes[char])) for char in char_pairs]
@@ -151,7 +147,7 @@ class Quotes(commands.Cog):
     @staticmethod
     def get_quote_chars(char):
         """
-        Prepare a list of all matched characters for the quote commands
+        Prepare a list of all matched characters for the quote commands.
         """
         if char.count('&') > 1:  # Only two people per pair allowed, ever
             return None

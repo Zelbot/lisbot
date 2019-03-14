@@ -9,7 +9,12 @@ from discord.ext import commands
 
 class OverviewPaginator:
     """
-    Paginator to make the image sources output more readable.
+    Universal paginator to make overviews more readable.
+    A prep_*_paginator method should adjust the paginator instance attribute
+    to hold an instance of a commands.Paginator, so it can be used in 3 easy steps:
+    paginator = OverviewPaginator(bot, ctx, cog)
+    await paginator.prep_*_paginator()
+    await paginator.paginate()
     """
     __slots__ = ('bot', 'ctx', 'cog', 'paginator', 'index')
 
@@ -71,7 +76,7 @@ class OverviewPaginator:
                                        suffix='')
 
         for index, url in enumerate(urls.keys()):
-            # Close each page when it has reached 3 commands
+            # Close each page when it has reached 15 URLs
             if index % 15 == 0 and index > 0:
                 paginator.close_page()
             paginator.add_line(f'  <{url}>')

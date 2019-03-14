@@ -22,7 +22,6 @@ prefixes = ['chloe', 'cp']
 prefixes = [f'{p} ' for p in prefixes] + prefixes
 prefixes += [p.title() for p in prefixes]
 bot = commands.Bot(command_prefix=prefixes, case_insensitive=True)
-bot.quotes = None
 bot.remove_command('help')
 
 
