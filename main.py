@@ -43,7 +43,7 @@ async def is_ready(ctx):
 
 
 @bot.check
-def is_dms(ctx):
+async def is_dms(ctx):
     """
     Do not allow any commands to be used in DMs.
     """
