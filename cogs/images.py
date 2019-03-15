@@ -19,17 +19,15 @@ class Images(commands.Cog):
     async def cog_check(self, ctx):
         """
         Check to see if the bot has the required permissions
-        for some specific commands.
+        for these commands.
         """
-        if ctx.command.name == 'image':
-            if ctx.channel.permissions_for(ctx.me).attach_files is False:
-                await ctx.send('I need `Attach Files` permissions to work properly!')
-                return False
+        if ctx.channel.permissions_for(ctx.me).attach_files is False:
+            await ctx.send('I need `Attach Files` permissions to work properly!')
+            return False
 
-        if ctx.command.name in ['image', 'quote']:
-            if ctx.channel.permissions_for(ctx.me).add_reactions is False:
-                await ctx.send('I need `Add Reactions` permissions to work properly!')
-                return False
+        if ctx.channel.permissions_for(ctx.me).add_reactions is False:
+            await ctx.send('I need `Add Reactions` permissions to work properly!')
+            return False
 
         return True
 

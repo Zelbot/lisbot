@@ -14,6 +14,17 @@ class Quotes(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    async def cog_check(self, ctx):
+        """
+        Check to see if the bot has the required permissions
+        for these commands.
+        """
+        if ctx.channel.permissions_for(ctx.me).add_reactions is False:
+            await ctx.send('I need `Add Reactions` permissions to work properly!')
+            return False
+
+        return True
+
     @staticmethod
     def apply_ini_markdown(quote):
         """
