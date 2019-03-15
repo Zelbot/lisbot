@@ -18,6 +18,9 @@ class Owner(commands.Cog):
         self.bot = bot
 
     async def cog_check(self, ctx):
+        """
+        Only allow the bot's owner to execute the commands of this cog.
+        """
         return await ctx.bot.is_owner(ctx.author)
 
     async def cancel_custom_tasks(self):
@@ -77,8 +80,8 @@ class Owner(commands.Cog):
         Closes the bot's connection and stops
         the systemd service on raspi (if on raspi).
         """
-        output = 'Going offline, this could take a bit...'
-        output += '\nI will, however, become unresponsive immediately!'
+        output = ('Going offline, this could take a bit...'
+                  '\nI will, however, become unresponsive immediately!')
         await ctx.send(output)
 
         message = '# Cancelling all tasks and going offline! #'
@@ -94,7 +97,7 @@ class Owner(commands.Cog):
         except FileNotFoundError:
             await self.bot.logout()
 
-    @commands.command(aliases=['devdelete'])
+    @commands.command()
     async def delete(self, ctx, message_id: int=None, channel_id: int=None):
         """
         Deletes the specified message.
@@ -106,8 +109,8 @@ class Owner(commands.Cog):
         if channel_id is None:
             channel = ctx.channel
         else:
-            channel = self.bot.get_channel(int(channel_id))
-        message = await channel.get_message(int(message_id))
+            channel = self.bot.get_channel(channel_id)
+        message = await channel.get_message(message_id)
 
         try:
             await message.delete()
@@ -115,12 +118,11 @@ class Owner(commands.Cog):
                 await ctx.send(f'Message on "{channel.guild}" #{channel}'
                                f' was successfully deleted!')
             else:
-                # await ctx.message.add_reaction('LiSButterfly:546471168979369984')
                 await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
         except discord.Forbidden:
             await ctx.send("I'm forbidden from deleting that message!")
 
-    @commands.command(aliases=['devstats'])
+    @commands.command()
     async def stats(self, ctx):
         """
         Displays amounts of cogs/commands/guilds/users/emojis.
