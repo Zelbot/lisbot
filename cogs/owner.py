@@ -115,7 +115,7 @@ class Owner(commands.Cog):
         try:
             await message.delete()
             if channel != ctx.channel:
-                await ctx.send(f'Message on "{channel.guild}" #{channel}'
+                await ctx.send(f'Message on "{channel.guild}" {channel.mention}'
                                f' was successfully deleted!')
             else:
                 await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
