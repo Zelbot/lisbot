@@ -75,7 +75,7 @@ class OverviewPaginator:
         paginator = commands.Paginator(prefix='**Available sources:**',
                                        suffix='')
 
-        for index, url in enumerate(urls.keys()):
+        for index, url in enumerate(sorted(urls.keys())):
             # Close each page when it has reached 15 URLs
             if index % 15 == 0 and index > 0:
                 paginator.close_page()
