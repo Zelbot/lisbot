@@ -88,6 +88,7 @@ async def on_command_error(ctx, exc):
             cooldown = random.choice(['Chillax!', 'Chillax, sistah.'])
             cooldown += f' Try again in {round(exc.retry_after, 2)} seconds.'
             await ctx.send(cooldown)
+            print(f'On cooldown: {ctx.author} - {ctx.author.id}')
         else:
             ai = await bot.application_info()
             await ai.owner.send(embed=output_embed)
