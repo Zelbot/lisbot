@@ -51,7 +51,7 @@ quotes = {
 
         "Max: Absolutely. You make me feel like I know what I'm doing."
         '\nChloe: And you make me feel like I have a reason for still being in Arcadia Bay.',
-        
+
         'Chloe: Photobomb!'
         '\nMax: Photo-hog.',
 
@@ -85,7 +85,7 @@ quotes = {
 
         'Chloe: Will you believe me?'
         "\nMax: I'll always believe you, Chloe.",
-        
+
         'Max: Fuck that! No... no way! You are my number one priority now. You are all that matters to me.'
         "\nChloe: I know. You proved that over and over again... even though I don't deserve it. I'm so selfish... not like my mom... Look what she had to give up and live through... and she did. She deserves so much more than to be killed by a storm in a fucking diner. Even my step... father deserved her alive. There's so many more people in Arcadia Bay who should live... way more than me...",
 
@@ -95,7 +95,118 @@ quotes = {
 
         "Chloe: Max... it's time..."
         '\nMax: Not anymore.'
-        "\nChloe: Max... I'll always be with you. Forever."
+        "\nChloe: Max... I'll always be with you. Forever.",
+        
+        # Farewell quotes start here
+        'Chloe: Ready?'
+        "\nMax: I guess. But isn't your mom gonna freak?"
+        "\nChloe: She's probably cooking with the radio on. She won't hear a thing."
+        "\nMax: I bet she'll notice a hole in the floor."
+        '\nChloe: Trust in science, Max. Even when science means blowing shit up.',
+
+        "Chloe: Tell me that wasn't the coolest thing you've ever seen."
+        '\nMax: That was truly amazing. Why are explosions so awesome?'
+        "\nChloe: That's like asking why are puppies cute. Some things just are.",
+
+        "Max: You're insane. That explosion was massive."
+        "\nChloe: You say that like it's a bad thing.",
+
+        'Max: What about this half-eaten jawbreaker? Serious biohazard.'
+        "\nChloe: You promised me we'd finish it together, no matter how long it took. Don't be a quitter."
+        "\nMax: You're right."
+        '\nChloe: Yes! The never-ending candy lives on.',
+
+        "Max: I still can't believe you're a Blackwell Academy student. How is it?"
+        '\nChloe: The classes are incredible. The teachers are actually smart. And the lab is legit. Petri dishes for days.'
+        "\nMax: What about the students? Are they as stuck up as you thought they'd be?"
+        "\nChloe: They're fine."
+        "\nMax: Chloe, you're terrible at hiding your feelings. Is everything okay?"
+        "\nChloe: I don't know. I just... I like hanging out with normal people. Like you."
+        '\nMax: Thanks. I guess.'
+        "\nChloe: You know what I mean. I hate fake people. You're real."
+        '\nMax: Thanks.',
+
+        'Max: Your dad is the best.'
+        "\nChloe: Sure. Just don't ever tell him that. We need to keep him on his toes.",
+
+        'Chloe: Are you just watching me up there, creeper?'
+        '\nMax: You are one of a kind, Chloe Price.'
+        '\nChloe: What?'
+        "\nMax: I'm lucky you're my best friend, that's all."
+        '\nChloe: Damn right you are, you mushy weirdo!',
+
+        'Max: How am I going to--'
+        "\nChloe: 'Sup, dude."
+        '\nMax: Bro.'
+        "\nChloe: Don't you mean sis?"
+        '\nMax: Maybe I meant "nerd".'
+        '\nChloe: Dork.'
+        '\nMax: Punk.'
+        '\nChloe: Punks are cool.',
+
+        'Chloe: You know what, Max Caulfield?'
+        '\nMax: What, Chloe Price?'
+        "\nChloe: You're the frickin' best. That's all."
+        '\nMax: Damn right. About time you realized it.'
+        "\nChloe: Tell anyone and I'll deny it.",
+
+        'Max: I wish this was big enough to jump in.'
+        "\nChloe: It's only September. It'll be totally dive-bomb-able in a few weeks."
+        '\nMax: Yeah. A few weeks.',
+
+        'Max: Are you ever gonna get your kite down from the roof?'
+        '\nChloe: It was unhappy in captivity. I set it free.'
+        '\nMax: You must be a hero to kites everywhere.',
+
+        'Chloe: Remember how we used to talk about ruling the Bays of Arcadia one day? We thought we were gonna be pirates forever.'
+        "\nMax: If being a pirate means acting silly and going on crazy adventures together, then we'll always be pirates."
+        '\nChloe: Hell yeah.',
+
+        'Max: Okay, take a step right. No, no, the other right!'
+        '\nChloe: My other right or your other right?'
+        '\nMax: Your other right.'
+        '\nChloe: Sure thing. Wait, what?',
+
+        'Max: What the--'
+        '\nChloe: That is not what we buried.',
+
+        'Max: You were really sweet.'
+        '\nChloe: Oh, man... I was really goopy.'
+        '\nMax: I like it.'
+        "\nChloe: That's because you're a goop.",
+
+        'Max: Is your mom going to mind about this mess?'
+        "\nChloe: Dunno. Thought they'd be home by now.",
+
+        'Max: Really cute, Chloe.'
+        "\nChloe: You're not so bad yourself.",
+
+        "Chloe: I can see what you're doing."
+        "\nMax: Just don't move. The artist at work!"
+        '\nChloe: Or trying to work.',
+
+        "Max: You're so much cooler than she is."
+        '\nChloe: Just to you...',
+
+        'Max: "This jawbreaker is going to last forever"?'
+        '\nChloe: Just like our friendship.'
+        '\nMax: Oh, Chloe... You were really drawing me that whole time?'
+        '\nChloe: Whoa, whoa, whoa -- mushiness alert!',
+
+        "Chloe: I'm so excited! We're gonna have the coolest pirate hangout ever, just like we always talked about."
+        '\nMax: Yeah, and it would just be for us.'
+        '\nChloe: Exactly. Our own little place.',
+
+        "Max: You're such a space hog! Move over."
+        '\nChloe: Nope.',
+
+        'Chloe: No peaking at my work!'
+        "\nMax: I wasn't!"
+        '\nChloe: Get out of here!',
+
+        "Max: Today's been awesome, huh?"
+        '\nChloe: For real. I love it when you stay over.'
+        '\nMax: Yeah.',
     ],
 
     'Mark Jefferson & Max Caulfield': [
@@ -126,12 +237,108 @@ quotes = {
         'William: Kiddo, look on the bright side, wouldja?'
         '\nChloe: What bright side?'
         '\nWilliam: You made a new friend today.',
+
+        "William: Amazing, isn't it? I can't look away."'\nChloe: Sure.'
+        "\nWilliam: Don't pretend you're not mesmerized, too. See? You're so drawn to it, you don't even realize the danger."
+        '\nChloe: Danger?'
+        '\nWilliam: Fire blinds us, just like darkness. But darkness blinds with absence. With loss.'
+        '\nChloe: What does fire blind with?'
+        "\nWilliam: Beauty. But sometimes there's a greater beauty yet to come."
+        '\nChloe: Incredible.'
+        "\nWilliam: Fire is jealous, Chloe. It wants all the beauty for itself. That's why you need to be careful."
+        '\nChloe: Careful of what?'
+        '\nWilliam: Of getting burned.',
+
+        "Chloe: Dad? I think we're stuck. Hey, maybe you should let me drive. You always do it wrong."
+        '\nWilliam: That was one time! When are you going to let it go?',
+
+        'William: Remember when we used to work on cars together? Those are some of my favorite memories.'
+        "\nChloe: Don't you mean my memories? I don't think you remember after you're dead."
+        '\nWilliam: Touche.',
+
+        "Chloe: Dad, stop! None of this is real. You're not real. Rachel's family isn't real. This whole thing-- It's all just... theater."
+        '\nWilliam: Well, you know what William Shakespeare said...'
+        '\nChloe: Something about the whole world being a stage, so might as well act the fuck out of it?'
+        '\nWilliam: Nailed it.'
+        "\nChloe: But I don't want to be an actor. I just want to be myself.",
+
+        "William: Hmm. Well, maybe there's a reason we pretend? Maybe the lies we tell each other are less horrible than the truths we keep hidden?"
+        "\nChloe: Wow. That's pretty dark, Dad."
+        '\nWilliam: Where do you think you get it from?',
+
+        "William: There's my cue."
+        '\nChloe: Dad?'
+        "\nWilliam: Relax, sweetie. It's all pretend, right?"
+        '\nChloe: Right.'
+        "\nWilliam: Just a bit of stage magic. Flood lights. Sound effects. Chloe. Look at me. Look at me, sweetheart. It's going to be okay."
+        '\nChloe: DAD!',
+
+        "Chloe: So much destruction... all because Rachel got angry at her dad. Who's been lying to her all her life. And he's still lying."
+        "\nWilliam: Hey, being a dad's tough."
+        "\nChloe: That doesn't justify what he's done."
+        "\nWilliam: I'm just saying... I'd probably do anything to keep you safe.",
+
+        'Chloe: Hey, Dad?'
+        '\nWilliam: Yeah?'
+        "\nChloe: Did you ever lie to me? I don't mean telling me that ash tray I made for Mom wasn't a piece of crap. I mean like, really lied about... Something that might hurt me to know."
+        '\nWilliam: What do you think?'
+        "\nChloe: I suppose everyone lies about big things. I mean, the stuff Mom doesn't know about me... So you probably lied, too."
+        '\nWilliam: Would you love me less?'
+        '\nChloe: Of course not!'
+        '\nWilliam: You sound pretty sure, sweetheart. You were pretty sure Mom would never fall in love with someone like David, too. Are you really ready to hear the answer to your question?'
+        "\nChloe: Ready as I'll ever be."
+        "\nWilliam: Problem is, I'm dead, so how am I supposed to tell you anything?",
+
+        "Chloe: I wish you'd told me when you could have."
+        "\nWilliam: You don't like the perfect relationship we had?"
+        "\nChloe: I wish you'd lived long enough for us to fuck it up.",
+
+        'Chloe: Am I seriously going in to face Damon Merrick? All for Rachel? Am I crazy?'
+        '\nWilliam: Hella crazy.'
+        "\nChloe: I'm glad you're here, Dad."
+        "\nWilliam: You don't want me to go?"
+        "\nChloe: Nah, I like the company. Besides, you don't want to miss this. Things are about to get real.",
+
+        # Farewell quotes start here
+        'William: And always remember: the real treasure is--'
+        '\nChloe: Friendship.'
+        '\nMax: Love.'
+        '\nWilliam: Your Oregon State Pre-Paid College Savings Plan!',
     ],
 
     # BTS quotes
     'Frank Bowers & Chloe Price': [
         "Chloe: You're a good man, Frank."
         "\nFrank: No. I'm not.",
+
+        "Frank: No. Listen, we've got some business to discuss. Where can we meet?"
+        '\nChloe: What about? Oh... Like drugs?'
+        '\nFrank: Price...'
+        "\nChloe: I'm hanging out in the junkyard north of town."
+        "\nFrank: A junkyard? That's great. Stay there, I'll see you soon."
+        "\nChloe. Kay. And Frank-- I'm not in trouble for anything, right?"
+        "\nFrank: I don't know. Did you do anything you should be in trouble for?"
+        '\nChloe: Like, in general, or to you?',
+
+        "Chloe: Pompidou, huh? That's one badass name for a dog."
+        "\nFrank: It's French."
+        "\nChloe: Okay... but he's not a poodle, Frank."
+        "\nFrank. No, he's not. But I'm gonna treat him like one.",
+
+        'Chloe: So who was that woman?'
+        '\nFrank: What woman?'
+        '\nChloe: The one I saw coming out of your RV!'
+        '\nFrank: Oh yeah, I meant to introduce you. Her name is Mind Your Own Fucking Business.',
+
+        'Frank: You hear the mill burned down?'
+        '\nChloe: Yeah... I heard some stuff about it.'
+        '\nFrank: Crazy. My friend Damon runs the place. He lost a lot of money last night.'
+        '\nChloe: Money from what?'
+        "\nFrank: Well, he's always had a few things going on. I help him out with some of them."
+        "\nChloe: Don't drown me in the details, Frank.",
+
+        "Chloe: It might be a little tough. I'm not supposed to be at Blackwell. I got suspended this morning."
+        '\nFrank: Congratulations.',
     ],
 
     # BTS quotes
@@ -157,6 +364,26 @@ quotes = {
         "\nChloe: I've been shutting you out even though I've needed you, and you needed me, and I know that. But this is not the answer."
         "\nJoyce: It's the only answer I have, Chloe."
         "\nChloe: In a million years I never thought you'd choose David over me. I'm sorry I took that for granted.",
+
+        "Joyce: Chloe, can't you just forget about David for a second? Think about me."
+        '\nChloe: maybe I just need space ok?'
+        '\nJoyce: Maybe I need my daughter back.',
+
+        "Joyce: Chloe, I'm leaving the door unlocked in case you don't have your key. Please come home. Doesn't matter that it's after curfew."
+        "\nChloe: mom i can't right now"
+        '\nJoyce: Please.',
+
+        'Joyce: Oh, Chloe...'
+        '\nChloe: Mom.'
+        "\nJoyce: I'm just so proud of you both.",
+
+        'Joyce: I love you, sweetheart!'
+        '\nChloe: Alright, alright!',
+
+        'Joyce: Chloe, is everything okay?'
+        "\nChloe: yeah. everything's fine."
+        '\nJoyce: Okay... Love you.'
+        '\nChloe: love you too',
     ],
 
     # BTS quotes
@@ -188,6 +415,11 @@ quotes = {
         '\nDavid: I... plan to.'
         '\nChloe: Then I say go fuck yourself.'
         "\nDavid: That's what I thought.",
+
+        "David: Chloe, I've made an agreement with your mother to trust you from now on."
+        '\nChloe: Oh, really? And what does that mean?'
+        "\nDavid: It means that, from  today forward,  I'm going to take you at your word. So if you say you haven't been smoking or drinking, then I'll just... leave you be. Even though she had pot yesterday! "
+        '\nJoyce: David...',
     ],
 
     # BTS quotes
@@ -201,6 +433,11 @@ quotes = {
         "Chloe: Just don't expect this to become a regular thing."
         '\nEvan: What? Caring about important issues?'
         '\nChloe: Caring in general.',
+
+        "Evan: What are you doing here? Aren't you supposed to be at home, thinking over your endless list of questionable decisions?"
+        '\nChloe: Dude, why do you care about my questionable decisions?'
+        '\nEvan: It offends me when intelligence is wasted.'
+        '\nChloe: [Thinking] Did Evan just call me intelligent? Damn straight.',
     ],
 
     # BTS quotes
@@ -333,6 +570,452 @@ quotes = {
         'Rachel: Wells blows. that meeting hella sucked.'
         "\nChloe: you're HELLA weird"
         '\nRachel: YOU ARE',
+
+        'Rachel: Chloe Price'
+        "\nChloe: i don't suck?"
+        "\nRachel: You really really don't.",
+
+        "Rachel: Luckily there's no rush."
+        '\nChloe: True. And no Blackwell.',
+
+        "Chloe: Last I checked, you're the one who went all Puff the Manic Dragon on that tree last night. What were you thinking?"
+        "\nRachel: I was angry. I didn't expect the whole stupid park to go \"whoosh\". But come on, doesn't \"accomplice\" sound way cooler than \"accessory after the fact\"?"
+        "\nChloe: Is that the official Arcadia Bay DA's opinion? Accomplice it is.",
+
+        "Chloe: When you think about it, getting suspended from the play is a good thing. You don't have to wear that silly costume and prance around stage like an idiot."
+        '\nRachel: Maybe I like prancing around stage like an idiot.',
+
+        'Rachel: Hey, I was thinking that after the show, maybe we could go do something. Just you and me.'
+        '\nChloe: Something criminal?'
+        '\nRachel: Criminally fun.'
+        "\nChloe: I'm in.",
+
+        'Chloe: Wait, you forgot your bag.'
+        "\nRachel: It's for you. Just a little survival kit for your new life on the lam. Drive safe, Chloe.",
+
+        "Rachel: Back at school yet again. They've got some tents up for dressing rooms. What are you up to?"
+        "\nChloe: i'm here too actually, running an errand for my dealer"
+        "\nRachel: Oh, really! So bad. Come see me when you're done? Help me cope with the shittiness of seeing VC in my costume."
+        '\nChloe: yeah for sure',
+
+        "Rachel: Chloe, you're being a little harsh, don't you think?"
+        "\nVictoria: No, she's right."
+        '\nRachel: She is?'
+        '\nChloe: I am?',
+
+        "Rachel: What is 't thou canst demand?"
+        '\nChloe: My liberty.'
+        '\nRachel: Thy liberty? Nay! This most of all I will not grant.'
+        "\nChloe: (Thinking) That's not her line... is it? What's going on?"
+        "\nChloe: But... thou assured my freedom... didn't thou?"
+        "\nRachel: I never said dearly I hold thee; my habit's been to keep my soul well-draped. Most loyal spirit... companion and friend... Is acting in my service not replete with excitement, amusement, and delight?"
+        '\nChloe: Of course, mistress... most truly it is so.'
+        '\nRachel: Then why, I pray you, wish you to be free?'
+        "\nChloe: Excitement's... a mere... counterfeit of bliss. These storms and these adventures? I prefer... To know... thou still cared for my... plainest self. "
+        '\nRachel: I have thee in my grasp; I will not bend. I will not see thee flying forth alone! The envy would be more than I could bear.'
+        "\nChloe: So come with me! Is that not in thy pow'r?"
+        "\nRachel: Spirit, take my hands, most faithful friend. For but a little longer I beseech: continue in thy service to my schemes. And when they are complete, I swear to thee-- We shall fly beyond this isle -- the corners of the world our mere prologue. I'll seek to make thy happiness so great that e'en the name of liberty's forgot. What sayes though, to my most hopeful wish?"
+        '\nChloe: Yes.',
+
+        "Rachel: Wasn't that fun?"
+        "\nChloe: You're so dead."
+        '\nRachel: Yeah? How dead?'
+        '\nChloe: Hella dead.',
+
+        "Rachel: Oh my go, Keaton's face behind you when you walked on stage..."
+        '\nChloe: Ugh, I was shitting myself!'
+        '\nRachel: He was shitting himself!'
+        '\nChloe: That dude owes me.',
+
+        "Rachel: I've never had an experience like that onstage."
+        '\nChloe: Yeah, right! You were...'
+        '\nRachel: No, you. Like, seriously... I love nights after a show!'
+        '\nChloe: Is it always like this?'
+        "\nRachel: Oh, totally! It's such a high. No more nerves, just the adrenaline...",
+
+        'Rachel: So, first-timer, are you proud of yourself? You were literally perfect tonight. I was blown away.'
+        "\nChloe: Yeah, I feel... really awesome. If you'd told me this morning I'd be this happy tonight?"
+        "\nRachel: You've gone through so much shit today."
+        '\nChloe: Right now is pretty good.',
+
+        "Rachel: Let's leave. For real."
+        '\nChloe: For real, huh?'
+        "\nRachel: You said you wanted to skip town and never look back. Like I said last night, let's do it!"
+        "\nChloe: I know. I've been thinking about that all day! But that was--"
+        "\nRachel: Don't say it was just a crazy thought. You mean it, I can tell. You want this."
+        '\nChloe: Yeah, but... like, eventually!'
+        "\nRachel: Let's go now. Didn't we already agree onstage?",
+
+        'Chloe: Fine then, Drama Queen, where are we going?'
+        '\nRachel: You tell me. What uniquely twisted location does Chloe Price plus Rachel Amber equal?'
+        "\nChloe: Hmm.... Why don't you show me LA?"
+        '\nRachel: Perfect. Sixty degrees every night. You and me on the Santa Monica pier, gorging on food truck food, smoking up, looking at the moon shining on the waves. And a beautiful blond man will sit next to us and smile at you.'
+        '\nChloe: Yeah, okay.'
+        "\nRachel: He'll say, \"I like your eyes,\" and I'll say, \"Back off, she's with me.\""
+        "\nChloe: You're full of shit!",
+
+        "Rachel: I love this time of night! Don't you just feel like everything's possible?"
+        "\nChloe: Rachel, stop. If you don't mean this, it's just making me feel like shit that this life you're describing isn't going to happen."
+        "\nRachel: For fuck's sake! I've never been more serious in my life.",
+
+        'Rachel: Chloe, what would it take to convince you?'
+        '\nChloe: How about... um...'
+        '\nRachel: Oh.'
+        '\nRachel: Is that convincing enough?'
+        '\nChloe: Ye--'
+        '\nChloe: Holy shit.'
+        '\nRachel: Right?',
+
+        'Chloe: What is this stuff?'
+        "\nRachel: I think it's a sign. I think we should leave tonight."
+        '\nChloe: Really?'
+        "\nRachel: If you want to, I'm ready. Let's go sneak some clothes and stuff out of my house. And then we'll get the hell out of Arcadia Bay."
+        '\nChloe: That sounds perfect.',
+
+        "Chloe: Just hurry back. I don't know how long I can keep this up."
+        '\nRachel: Try doing it your whole life.',
+
+        'Rachel: And Chloe. We just need to make it through dinner. Try not to say anything that... you know...'
+        '\nChloe: That I would normally say?'
+        '\nRachel: Exactly.',
+
+        'Rachel: Chloe?'
+        "\nChloe: I'm right here."
+        '\nRachel: Good. I need you.',
+
+        'Rachel: She was so beautiful...'
+        '\nChloe: Just like you.',
+
+        "Rachel: This all feels like someone else's life."
+        "\nChloe: Whatever happens, Rachel, I'm here.",
+
+        'Chloe: Hey Rachel.'
+        "\nRachel: I'm glad you're here, Chloe."
+        '\nChloe: Of course.',
+
+        "Rachel: I've always loved stars."
+        '\nChloe: Why?'
+        "\nRachel: They remind us there's so much beauty out there, which we almost never see."
+        "\nChloe: Because we're blinded by what's in front of us."
+        "\nRachel: Exactly. But then I learned the truth. The stars we're seeing have already been dead for millions of years. They're all... lies."
+        "\nChloe: But that doesn't make them any less beautiful, right?"
+        "\nRachel: I don't know. If they're not even real, then what's the point?",
+
+        "Rachel: I think you're the only one in the world I can trust."
+        "\nChloe: I'll take it, even if it's only by process of elimination."
+        '\nRachel: Good.',
+
+        "Chloe: After my dad died, I was worried I wouldn't know how to talk to him anymore. But somehow, when we speak, I always know what to say."
+        '\nRachel: When you speak?'
+        "\nChloe: In my dreams. He's there, and it's so real. It's almost like it's another part of my life. It used to be the only part that mattered. I've never told anyone about that. Weird, huh? Uh, Rachel?"
+        "\nRachel: I was just thinking. Maybe I was wrong before. Who cares if the stars are dead. As long as we can still see them, that means they're real to us. Right?"
+        '\nChloe: Right.',
+
+        "Rachel: Thank you for being there for me last night. I'm feeling a lot better."
+        '\nChloe: guess what'
+        "\nRachel: hmm. I'm a good kisser?"
+        "\nChloe: okay that. also we're meeting Frank at the junkyard in 2 hrs. i think he can get us in touch with Sera."
+        '\nRachel: Holy shit'
+        "\nChloe: yup. i'm still at my house, just showering then grabbing tools for the truck. sooo meet at junkyard?"
+        "\nRachel: I'll be there. You're amazing, Chloe Price.",
+
+        "Rachel: Holy shit, your hair! It's so..."
+        '\nChloe: Badass?'
+        '\nRachel: I was gonna say hot. But yeah, badass too.',
+
+        'Rachel: Hey, not sure if you saw, but someone moved your truck.'
+        '\nChloe: No way.',
+
+        'Chloe: I saw Steph earlier. She says hey.'
+        "\nRachel: Steph's so cute. But not as cute as you."
+        '\nChloe: Stop.'
+        '\nRachel: I mean it.',
+
+        "Chloe: Rachel, I'm sorry."
+        '\nRachel: What? What for?'
+        "\nChloe: You're here because of me. Because I choked back there in the junkyard."
+        '\nRachel: What? Shut up!'
+        "\nChloe: You were so fierce, and I just froze. I fucked it up, and I'm so sorry, and..."
+        '\nRachel: And you saved my life. You. Saved. My. Life.'
+        "\nChloe: I almost lost you. I can't believe I almost--"
+        "\nRachel: You're not getting rid of me that easy."
+        '\nChloe: Good.',
+
+        "Chloe: I almost lost you. I can't believe I almost--"
+        "\nRachel: You're not getting rid of me that easy."
+        '\nChloe: Good.',
+
+        "Chloe: Happy that your dad's here?"
+        "\nRachel: I mean, I'm still mad at him for everything he's done. but... It felt so good to lean on him. He's my dad, you know? I felt completely safe."
+        '\nChloe: Like on Mount Hood.',
+
+        'Rachel: Would you do something for me?'
+        '\nChloe: Anything.',
+
+        "Rachel: Sera. My mom. That's so weird to say. I'm not even sure what she is, honestly. But.. I think I still want to meet her."
+        '\nChloe: I figured you would.'
+        "\nRachel: I don't even know if she's still in Arcadia Bay... But if she is, will you find her, please?"
+        "\nChloe: You really want this, don't you?"
+        '\nRachel: I do. Chloe, I really do.'
+        '\nChloe: Then... of course. Whatever it takes.',
+
+        "Rachel: I bet my dad has her number... maybe in his office. Our house key's just under the mat. The code is 0722."
+        "\nChloe: To your... your dad's office? 0722."
+        '\nRachel: Yeah. My birthday.'
+        "\nChloe: I'll find her, Rachel. And then I'll tell her how fucking cool you are."
+        '\nRachel: Thank you, Chloe. For... everything...',
+
+        'Chloe: How you feeling?'
+        '\nRachel: Like I got stabbed. Doc says there will be a sick scar. Maybe a tattoo is in order.'
+        '\nChloe: Fuck yeah.',
+
+        'Rachel: We never actually escaped, did we?'
+        "\nChloe: We've got time."
+        '\nRachel: All the time in the world.',
+    ],
+
+    # BTS quotes
+    'Samuel Taylor & Chloe Price': [
+        'Samuel: Usually I can see both what people want me to see and what they want me to keep hidden.'
+        '\nChloe: And what do I want to keep hidden?'
+        "\nSamuel: That you are lonely and afraid. It's okay not to be okay, Chloe Price.",
+    ],
+
+    # BTS quotes
+    'Damon Merrick & Drew North': [
+        'Damon: Damn. You are one tough kid.'
+        '\nDrew: Fuck you.'
+        '\nDamon: Yeah? What about this? Good luck running on that knee now. Bye-bye, football.',
+    ],
+
+    # BTS quotes
+    'Dana Ward & Chloe Price': [
+        "Dana: Did Doug dig David's garden or did David dig Doug's? Did Doug..."
+        '\nChloe: Hell if I know.',
+
+        'Dana: Betty bought a bit of butter, but she found the butter bitter. Betty bought...'
+        '\nChloe: Sucks for Betty.',
+
+        'Dana: Clueless klutzy Chloe clumsily crowded careful creatives. Clueless klutzy Chloe...'
+        '\nChloe: Wait a second...',
+    ],
+
+    # BTS quotes
+    'Sean Prescott & Nathan Prescott': [
+        'Sean: You will not embarrass me. Nathan...'
+        '\nNathan: Yes.'
+        "\nSean: Good. Now... Break a leg. I'll see you after the show.",
+    ],
+
+    # BTS quotes
+    'Sean Prescott & Chloe Price': [
+        'Chloe: Great pep talk, Mr. P. Everyone knows the best way to instill confidence in someone is by intimidating them.'
+        "\nSean: I don't know who you are, but mind your own business."
+        "\nChloe: I'd love to. Don't you have like, a private bunker filled with gold coins where you could have these conversations?",
+    ],
+
+    # BTS quotes
+    'Travis Keaton & Chloe Price': [
+        'Keaton: My dear, what if I told you that the entire fate of the production rests upon your slender shoulders?'
+        "\nChloe: I'd say you're super fucked.",
+    ],
+
+    # BTS quotes
+    'The Ambers & Chloe Price': [
+        'Rose: Chloe, you must join us for dinner tonight.'
+        '\nRachel: She must?'
+        '\nChloe: I must?'
+        '\nJames: Of course.',
+    ],
+
+    # BTS quotes
+    'James Amber & Chloe Price': [
+        "Chloe: Your daughter's pretty great."
+        "\nJames: Thank you. We're fond of her as well.",
+
+        "James: Let's say... sherry."
+        '\nChloe: Okay. One, two, three: Sherry.'
+        '\nJames: Comical.',
+
+        "James: That's enough! You are not welcome here or around my daughter any longer. I knew exactly what kind of person you were from the moment I saw you, and I let my wife's compassion get the better of me."
+        '\nChloe: Oh, what kind of person is that?'
+        '\nJames: A delinquent. A broken girl from a broken home.',
+
+        "James: I don't think she would deliberately harm anyone. But addicts can cause tremendous harm without meaning to."
+        "\nChloe: Yeah, but Rachel's not a baby anymore--"
+        '\nJames: Listen to me. Sera brought criminals and drug dealers into our home. She put Rachel in serious danger just to chase her habit.',
+
+        'James: Chloe, I believe Rachel trusts you more than anyone else right now.'
+        '\nChloe: Is this where you ask me to manipulate Rachel into doing what you want?'
+        "\nJames: This is where I ask you to do as your conscience dictates. But please... put my daughter's safety first."
+        '\nChloe: That is something I will always do.'
+        "\nJames: She's so young... you are, too. But I know you've experienced loss. Protect her from that, please."
+        "\nChloe: I'll do what I can. I care about her, too, you know."
+        '\nJames: I know. Thank you.',
+
+        'James: Chloe, what happened?'
+        "\nChloe: It's my fault. I should have listened to you. I even saw your file saying Sera was connected to Damon Merrick.",
+
+        "James: Start over and tell me everything. Did you and Rachel try to contact Sera? I'm not going to chastise or blame you, Chloe, but I need the whole story."
+        '\nChloe: So... I got my dealer to meet us since he knows Sera...'
+        '\nJames: Frank Bowers?'
+        "\nChloe: Yeah, that's right. But Damon showed up with him."
+        '\nJames: What did Merrick want?'
+        "\nChloe: I think he wanted to scare us, so we'd stop asking questions about his business."
+        '\nJames: Is that how it became violent?'
+        "\nChloe: It was-- It was actually Rachel who got angry. She was furious that he wouldn't tell her where Sera was."
+        "\nJames: This is exactly what I've been afraid of. Rachel won't let anything stop her."
+        "\nChloe: It wasn't only that. She was already angry about Damon pushing me around."
+        "\nJames: She is like her mother. Quick-tempered. Rash. I've always been afraid of losing her the way I lost Sera.",
+    ],
+
+    # BTS quotes
+    'Rose Amber & Chloe Price': [
+        'Chloe: So, am I crushing it?'
+        '\nRose: This dinner would be taking literally minutes longer without you.'
+        '\nChloe: Crushing it.',
+
+        "Rose: Actually, could you be a dear and ask Mr. Amber what he'd like to drink with dinner?"
+        '\nChloe: I will be a dear.',
+
+        "Rose: I'm really quite glad that you're here."
+        "\nChloe: I'm glad, too. "
+        "\nRose: You've had to cope with much worse, I know. Im grateful Rachel has someone as strong as you.",
+
+        "Rose: It might be hard for you to understand, but after thirteen years of marriage, I'm not threatened by what happened."
+        "\nChloe: You're right. I don't understand.",
+
+        "Rose: Your hair! I almost didn't notice it."
+        "\nChloe: Oh, yeah. It's... it's not a big deal."
+        '\nRose: I bet Rachel loves it.',
+
+        "Rose: I can't imagine what I would to if we lost her..."
+        '\nChloe: Me, too.'
+        "\nRose: You've grown so close, haven't you?"
+        "\nChloe: Yeah. It's weird to think we just met a few days ago."
+        '\nRose: When you meet someone who changes everything, you just know.',
+    ],
+
+    # BTS quotes
+    'Mikey North & Chloe Price': [
+        'Mikey: hey steph says you were in the play?! what?!'
+        "\nChloe: I've had a busy day"
+        '\nMikey: most heroes do',
+
+        'Mikey: chloe?'
+        '\nChloe: yeah'
+        "\nMikey: you're stronger than anything"
+        '\nChloe: hope so',
+    ],
+
+    # BTS quotes
+    'Rose Amber & James Amber': [
+        "James: Excuse me dear, but if this is what passes for politically aware these days, we're in serious trouble."
+        "\nRose: James! That's unfair, and also rude to Chloe."
+        "\nJames: No, I don't believe it is. It seems clear that these points Chloe is making are merely veiled attacks on me.",
+    ],
+
+    # BTS quotes
+    'James Amber & Rachel Amber': [
+        'James: I want to tell you all of it. But are you sure that Chloe should be here for--'
+        '\nRachel: Chloe stays.'
+        '\nJames: Of course.',
+
+        'Rachel: But now... she wants to see me?'
+        '\nJames: Yes. But Rachel, it cannot be.',
+
+        "Rachel: But maybe she's different now. People change, right?"
+        "\nJames: Maybe so. But consider that for fifteen years, she's preferred that money to you.",
+
+        "Rachel :Dad... I'm glad that you're here."
+        '\nJames: Me too, Rachel...'
+        '\nRachel: It really hurts.'
+        "\nJames: Shh... the pain will pass... Chloe's here. You want me to stay?"
+        "\nRachel: No, I'll be okay. Thanks, Dad. "
+        "\nJames: I'll come back in a little while.",
+    ],
+
+    # BTS quotes
+    'Victoria Chase & Chloe Price': [
+        'Victoria: So I was right all along. Rachel Amber is a fucking evil bitch'
+        '\nChloe: oh yeah she totally is'
+        "\nVictoria: I guess you think you're her little sidekick now."
+        '\nChloe: yup'
+        "\nVictoria: you got every line of that play fucking PERFECT. how could THAT be? You've been planning this, haven't you?"
+        '\nChloe: oh no, you figured it out'
+        "\nVictoria: I've had it with this school. Nobody gave a shit about me last night. It was all RACHEL RACHEL RACHEL"
+        "\nChloe: oh man, when you're an awful person and then everyone suddenly realizes. that's just the worst"
+        '\nVictoria: FUCK YOU CHLOE',
+    ],
+
+    # BTS quotes
+    'David Madsen & Joyce Price': [
+        "David: I don't think this is the best idea."
+        '\nJoyce: You already promised.',
+    ],
+
+    # BTS quotes
+    'Damon Merrick & Chloe Price': [
+        "Chloe: You're early, Frank. What's the occasion?"
+        "\nDamon: It's his fucking Bar Mitzvah. Frank here's becoming a man. Aren't you, big guy?",
+
+        'Damon: Frank says you were asking about a client of his. That true?'
+        "\nChloe: Yeah, it's true. I don't see why you should give a shit."
+        "\nDamon: You don't? Maybe I'll show you. See, you two Nancy Drews decided it would be a good idea to call your drug dealer and ask about his business. I didn't go to a fancy academy, but that doesn't strike me as smart.",
+
+        'Frank: Look, none of that matters. All we care about is that you stop asking questions. Got it?'
+        '\nRachel: No. Tell me where she is. Now.'
+        '\nChloe: Rachel...'
+        '\nDamon: Wait a minute... No way.'
+        '\nRachel: What the fuck is your--'
+        "\nDamon: Rachel, as in... Rachel Amber? That makes so much sense. This is James Amber's fucking kid."
+        '\nFrank: Damon...'
+        "\nDamon: Your dad's a real piece of shit, you know."
+        "\nChloe: So? We don't have anything to do with him."
+        "\nDamon: Right. Here's what happens next..."
+        "\nFrank: Come on, man. They're just kids."
+        "\nDamon: No, they're not. This one is the fucking DA's daughter.",
+    ],
+
+    # BTS quotes
+    'Steph Gingrich & Chloe Price': [
+        'Steph: Love the hair, by the way,'
+        "\nChloe: I bet you'd look cool with a little color."
+        "\nSteph: Yeah? I'll have to think about it. Maybe something red?",
+    ],
+
+    # BTS quotes
+    'Steph Gingrich & Mikey North': [
+        "Mikey: You're pretty scary, Chloe."
+        '\nSteph: In a good way.'
+        '\nMikey: In the best way.',
+    ],
+
+    # BTS quotes
+    'Bald & Brown-Haired Firefighter': [
+        'Brown-Haired Firefighter: Hey, just heard the fire went out...'
+        "\nBald Firefighter: Went out? You mean it's controlled?"
+        "\nBrown-Haired Firefighter: No, it's completely out. It extinguished itself."
+        '\nBald Firefighter: How could that be?'
+        '\nBrown-Haired Firefighter: Hell if I know.',
+    ],
+
+    # BTS quotes
+    'Sean Prescott & Medical Staff': [
+        'Sean Prescott: Why has my son been assigned to you? I never authorized that he be seen by--'
+        '\nMedical Staff: I was assigned because Nathan was becoming quite upset--'
+        '\nSean Prescott: So they sent a psychiatrist? Because my son was upset?'
+        '\nMedical Staff: Please, Mr. Prescott, your son need serious psychiatric--'
+        '\nSean Prescott: My son needs nothing but youth. He put down a couple of bullies who were harassing him at school. That is all.'
+        '\nMedical Staff: Sir, I believe your son is manifesting serious and alarming symptoms. Allow me the chance to--'
+        '\nSean Prescott: Nathan is already getting more than enough attention from one of you. I am fed up with these made-up problems.',
+    ],
+
+    'Damon Merrick & Sera Gearhardt': [
+        "Sera: I just want to meet my daughter. Can't you understand? Why does he--"
+        "\nDamon: Your daughter? Jesus. So that's what he's worried about. Can't let the public know the mother of this daughter is some junkie."
+        "\nSera: I just want to see her. You don't have to--"
+        "\nDamon: Shut up. James Amber wants you out of the picture, so that's what's going to happen. After all, no one believes a junkie.",
     ],
 
     'Mark Jefferson': [
@@ -405,7 +1088,7 @@ quotes = {
         "[Nightmare]\nMax... Max... I want to share my gift with you... Don't you dare run away...",
         '[Nightmare]\nMax, Rachel not only gave great headshots... she gave great head. Especially after I dug her body up to be with her one final time. Why are you looking at me like that?',
         "[Nightmare]\nNow that Chloe is dead, you won't be distracted in class anymore...",
-        '[Nightmare]\nIf only you could have seen Rachel... my blood spattered angel...'
+        '[Nightmare]\nIf only you could have seen Rachel... my blood spattered angel...',
     ],
 
     'Max Caulfield': [
@@ -611,6 +1294,79 @@ quotes = {
         'I changed fate and destiny so much that... I actually did alter the course of everything. And all I really created was just death and destruction!',
         # BTS quotes start here
         "[Dream]\nDon't Worry. I'm going to see you real soon. When you're dead.",
+        "[Dream]\nYou got kicked out of Blackwell??\nWow. I don't think we can be friends anymore.\nIf we ever were.",
+        # Farewell quotes start here
+        "It feels like I've spent half my life hanging out in this room. Probably because I have. I can't believe those days are all over now.",
+        "In a few days, my whole family moves to Seattle. I have no idea when I'll see Chloe again. This could be my last chance to say goodbye. But how do you tell your best friend that you're leaving her?",
+        'Let this box of trash be a sacrifice to you, oh almighty glowy bear.',
+        "Chloe's always preferred imaginary animals to real ones. Besides Bongo, of course.",
+        "Chloe keeps trying to get me to hop on her board. I'd rather take pictures.",
+        "Chloe's such a nerd. She hangs onto all her old textbooks and school supplies.",
+        "Chloe's been beating me for a while. But that growth spurt could come any day now.",
+        'I can never tell if Chloe is my best friend because she makes me do crazy things, or despite it.',
+        'People say a lot of things about the Prescott Family. But this is pretty cool.',
+        "It's so hard to believe. This room, this house, this town... all in the past now. Or soon to be.",
+        "Who even am I without Chloe? She's the one who's always starting things, pulling us into adventures. I can't imagine life without her. Maybe I haven't told her I'm leaving yet because I still can't believe it's real myself.",
+        'Live fast, die young, and go out with a bang. Rest in pieces, doll.',
+        'I guess these really are pieces of our past. Then again, so is this whole room.',
+        'But be forwarned, the journey will be treacherous and full of... treachers.',
+        'Subject and photographer. You really do it all, Max.',
+        "It's been five years, Max. I'm sure the boogie man died of starvation.",
+        'Captain Bluebeard and Long Max Silver ride again, bitches!',
+        'If this has to be my last day here, might as well have one final pirate adventure.',
+        'I slipped and broke this post a few years ago. But Chloe insisted on taking all the blame. Even after she got grounded, she never squealed. What a friend.',
+        "I can't believe I won't be able to call Arcadia Bay home much longer.",
+        'I always liked to imagine I could open that wardrobe and step into another world.',
+        "I don't think I could ever handle a real life murder investigation.",
+        'The Two Whales makes the best Belgian Waffles. No other diner could even come close.',
+        "Did Chloe get into a fight? She never gets in trouble. I hope she's okay.",
+        "It's awesome that Chloe's mom wants to teach kids. She'd be really good at it.",
+        "It seems like Chloe's dad always has a project around the house.",
+        "Chloe's mom bought me a tooth brush because I spend the night here so often. Well, I used to.",
+        'I guess Chloe never really grew out of wanting to be a pirate.',
+        "Chloe's room has always been home base. It's har to think this might be the last scheme we plan here.",
+        'There it is, the "Dark Cavern".',
+        "I wonder if I'll ever take this view in again.",
+        'No sharpie boob jobs. Disappointing.',
+        "Her parents couldn't part with this... I guess I see where Chloe gets her sentimentality from.",
+        'I remember it took this thing like 100 years to rewind The Land Before Time.',
+        "Not a single country record. These must belong to Chloe's mom.",
+        'Aw, I remember when Chloe and I decorated this. More like destroyed it...',
+        'I wonder how many different moments this [camera] has captured.',
+        'I never realized how much I liked vintage things. This cooler is awesome!',
+        'Chloe Price. My best friend.',
+        "I think when you're a kid, you're only afraid of things that can hurt you. But when you get older, you become more afraid of hurting the people you care about. And spiders.",
+        "Man, I'm gonna miss her.",
+        "It's not that I don't like the blue, I'm just sad to see the old color go.",
+        "One time, we stuck a bunch of this tape to Chloe's face to make a blue beard. Putting it on was a lot more fun than taking it off.",
+        'I still wish I could live in the world we drew.',
+        "I've spent so much of my life here, every little corner is familiar. Comforting.",
+        "These games we're playing... buried pirate treasure from out past selves... Is this all selfish of me? Why is this making me feel more guilty about leaving?",
+        "I'm really gonna miss Price family barbeques.",
+        "Chloe's bottle rocket, the fastest way to get an entire bottle of soda in your hair.",
+        'I wish I could freeze this moment and never have to leave it.',
+        "Chloe's dad is such a goofball.",
+        'Manga might be the one thing where Chloe out-nerds me.',
+        'We always make so much more of a mess here than at my house.',
+        "Chloe's always been good at making up cool things to do.",
+        'It actually might be really fun to write letters to Chloe after I move.',
+        "It's so hard to predict the future. Maybe it's better to enjoy the present instead.",
+        'There are no mistakes in art.',
+        'I guess I should try talking to Chloe again about my... news.',
+        'I love how Polaroid cameras make every photo look a little nostalgic.',
+        'That was a good week. I used every possible excuse to be here for breakfast.',
+        'I always look especially short next to Chloe.',
+        "Chloe's parents live in Idaho now. I guess compared to that, Seattle's not so far.",
+        "Goodbye, vase. Soon you won't have to worry about me knocking you over anymore.",
+        'These [umbrellas] used to make great pirate swords.',
+        'Looks like Chloe is a lot more responsible than I am with my allowance...',
+        "Chloe and I have been friends for so long. Maybe I'm worrying too much about this move changing things.",
+        'Hey! What if my being in Seattle finally convinces Chloe to try an MMO?',
+        'Chloe and I spilled that wine months ago, but I still feel bad about it.',
+        "Chloe looks so content when she's drawing. Is that what I look like when I'm taking pictures?",
+        "It's just Seattle. I'm probably overstressing about the whole thing. Right?",
+        'Oh my god. I want to take a picture of that so bad.',
+        'I wish this moment could last forever.',
     ],
 
     'Chloe Price': [
@@ -750,19 +1506,19 @@ quotes = {
         "I know I've been selfish, but for once I think I should accept my fate... our fate...",
         "Max, you finally came back to me this week and you did nothing but show me your love and friendship. You made me smile and laugh like I haven't done in years. Wherever I end up after this... in whatever reality... all those moments between us were real, and they'll always be ours.",
         # BTS quotes start here
-        "I'm no one's image of a perfect daiugher. Or student. Or anything, really.",
+        "I'm no one's image of a perfect daughter. Or student. Or anything, really.",
         "Sometimes I think he's trying to tell me something. Other times I remember that he's feeding worms in a ditch right now and anything else is just a fairy tale to make myself feel better.",
         'If I work at it, maybe I can leave this place just a little less perfect than when I found it.',
         "Despite my mom's best efforts, I don't actually hate her. I know shit's been rough since Dad died.",
         'David Madsen, a jobless, brainless, dickless little shit with a hard-on for the military and a promise to "whip me into shape." Asshole.',
         'Max Caulfield, MIA ex-best friend extraordinaire. This artsy motherfucker loves photography more than life itself and definitely more than me.',
         "It was probably the moment when I needed her most, and she bailed. Thanks, Max, for teaching me that I can't rely on anyone. I mean it. Life lesson learned.",
-        "The worst part is that even though we haven't spoken in months, even though she habitually ignored my texts so much that I just stopped trying, even though I know, deep down, that she doesn't care about me anymore and that she probably has all new friend up in fucking Seattle... I still miss her. If she came back tomorrow and said \"hey Chloe, want to dress up like pirates and be stupid together?\", I would taker her back in a heartbeat.\nIn a heartbeat."
+        "The worst part is that even though we haven't spoken in months, even though she habitually ignored my texts so much that I just stopped trying, even though I know, deep down, that she doesn't care about me anymore and that she probably has all new friend up in fucking Seattle... I still miss her. If she came back tomorrow and said \"hey Chloe, want to dress up like pirates and be stupid together?\", I would taker her back in a heartbeat.\nIn a heartbeat.",
         'As if a few paragraphs about how great Dad was could help me forget that his guts are probably still plastered to the underside of a semi truck.',
         "If that's coping, then coping can go fuck itself.",
         "Maybe one day, when you return home and apologize for having forgotten all about me and we kiss and make up, I'll show this to you and we can read it and laugh.",
         "Anyway, I politely suggested to Mom that perhaps it was too early to assume David would be in the picture by then. Or breathing. Hey, shit happens. As you might imagine, that didn't go over well.",
-        "Funny story: I had trouble coming up with an excuse so I just... didn't. I just didn't show op.\nAnd it was fine. Nobody said anything to me. Crazy, right? It's like I'm invincible all of a sudden. Maybe that's the perk of being the \"dead dad girl\". No one knows what to do with me, so they're actually relieved when I stay home."
+        "Funny story: I had trouble coming up with an excuse so I just... didn't. I just didn't show op.\nAnd it was fine. Nobody said anything to me. Crazy, right? It's like I'm invincible all of a sudden. Maybe that's the perk of being the \"dead dad girl\". No one knows what to do with me, so they're actually relieved when I stay home.",
         "If I owed someone a thousand dollars, I'd be shitting my pants.",
         "I'd join a motorcycle gang... if I had any friends.",
         "Home... right. Now I remember why I'm here. Any place is better than home.",
@@ -806,7 +1562,7 @@ quotes = {
         "Dream life over real life, that's my motto.",
         "Hey, if you don't take the time to stand back and watch, you miss some of life's finer moments.",
         'In the war between a meathead and a shithead, does anyone win?',
-        "Nathan is... odd. He's extremely privilged, yet dark and brooding. Even though he's a dick, I can't help feeling bad for him sometimes. He's really just a weird little dude trying to figure out his shit, but he has to pretend to be all this stuff he's clearly not, like an athlete ot a \"cool\" kid. You can tell it fucks him up inside.\nOf course, the best cure for feeling bad for Nathan is to actually talk to Nathan. Then you remember what a wonderfully punchable face those Prescott genes gave him.",
+        "Nathan is... odd. He's extremely privileged, yet dark and brooding. Even though he's a dick, I can't help feeling bad for him sometimes. He's really just a weird little dude trying to figure out his shit, but he has to pretend to be all this stuff he's clearly not, like an athlete ot a \"cool\" kid. You can tell it fucks him up inside.\nOf course, the best cure for feeling bad for Nathan is to actually talk to Nathan. Then you remember what a wonderfully punchable face those Prescott genes gave him.",
         'That pic would actually make a sweet tattoo.',
         'Maybe if I delay going inside long enough, Blackwell will be overrun by future excellence.. And by future excellence, I mean molepeople.',
         'Rachel looks awesome...',
@@ -822,6 +1578,7 @@ quotes = {
         "Fuck, it really sounds like I have a crush on her, doesn't it? Here's hoping she reveals something really horrible about herself soon, like a stamp collection, or a love for cat memes. Something to make her a little less... indescribably awesome.",
         'Suck a D, V.C.',
         'Rachel Amber. Drama star, and... guardian angel?',
+        "Well, I don't really need a good reason to ditch school.",
         "I feel pretty confident there's going to be a dead body in here.",
         "I was supposed to read Huck Finn in English last year. Now I'm living it. Price one, Twain zero.",
         'Just another typical day... skipping school... with Rachel Amber...',
@@ -850,7 +1607,7 @@ quotes = {
         "I don't really care about any of this, except my secret stash.",
         'Fuck every inch of this place. I wish I could tag it from floor to ceiling, but with Skip watching me...',
         "You can't trust normal people. Just ask Rachel.",
-        "Despite his job, James doesn't act like an uptiht law enforcer all the time unlike some wanna-be father figures I know.",
+        "Despite his job, James doesn't act like an uptight law enforcer all the time unlike some wanna-be father figures I know.",
         "I'd certainly rather have a cheating dickwad dad than a dead one.",
         "Another letter to Max that I'll never send. At least Journal Max won't abandon me the way Real Max did.",
         "Uhhh... I don't even know. I don't.\nFirst off, was your money on \"Chloe blows this and goes back to having no friends again?\" I hope so.",
@@ -864,6 +1621,247 @@ quotes = {
         "I don't need more discipline from you. I need my mom.",
         'Sure, here you go. Show me a warrant, asshole.',
         "There is no home. Not if he's there.",
+        'How do you know which way is up when your whole life has been turned upside down?',
+        "Is this junkyard all I've got left?",
+        'This thing is a mess. But maybe I can fix it again.',
+        "Eh. I think I'm all smashed out... For now.",
+        'Damn... you... cigarettes.',
+        'Bottles bottles everywhere, and not one beer to drink',
+        'Wow. I should angry graffiti more often.',
+        "Sorry, Max. I think I'm more jealous of you than anything. Hopefully I'll be escaping this place soon, too...",
+        'First you take my mom, then you take my home? Fuck you, David.',
+        'Guess I was pretty pissed Rachel last night. Amazing that someone I just met could have made me this angry.',
+        "Here's a side of Arcadia Bay they don't put on the postcards.",
+        'I used to love opening up the diner with Mom before school. I guess those days are now officially over.',
+        'This mat has seen some things. Mostly feet.',
+        'This thing needs more love than I can give right now.',
+        "You ever hated someone's guts, but then later felt bad because you found out they're actually cooler than you thought? Yeah, me neither.",
+        "I guess it backfired, because now David is moving into my old house. I say old house, because if he's there, I sure as shit am not.\nLuckily I've still got the junkyard, my home away from home.",
+        'Nearly all great art is made on the insides of hoods atop ships in the middle of junkyards.',
+        'What do I want to tell my fellow sailors of the seven trash heaps?',
+        "I don't know for a fact that there isn't buried treasure there.",
+        "I can't believe Rachel set that fire. I don't think she meant to. But I also don't think she... didn't mean to.",
+        'Crazy that something so destructive can also be so beautiful. Or a fire that began in a trash can could grow to light up the entire sky.',
+        'In conclusion, fire: pretty sweet.',
+        "I know one fire that doesn't need any poking.",
+        "Here's hoping for a holiday miracle to light up my ride.",
+        "This thing looks like a rusted out shopping cart. Probably drives like one too. That's if it ever does drive, which seems questionable. Still... how sweet would that be...",
+        'You only get one chance to make a first expression.',
+        'The eye sees all.',
+        "Does your truck look like a Christmas party on wheels? Didn't think so.",
+        "Tell me if we're ever really getting out of Arcadia Bay, all-seeing eye.",
+        'I wonder if it burned like this the day... the day it happened.',
+        'I miss him, so much.',
+        'Dad, what are we doing here? Are you trying to tell me something? Dad?',
+        "Figured it can't hurt to have the Illuminati in our side for whenever shit goes down.",
+        "I'd be way happier going to jail than having to live at home with Dick-tator David.",
+        'Too blunt? Sorry. I do that sometimes.',
+        "It's time to talk about the elephant in the room -- this elephant fucking rules.",
+        'Nothing like an abandoned shack in the middle of a junkyard to make a girl feel like exploring a new wardrobe.',
+        "That's the woman we saw with Rachel's dad. Weird.",
+        "So Frank's a fellow survivor of BlackHell? Who knew...",
+        "That's an insane amount of beans.",
+        "By the end, everything... I don't know. Seemed a little less broken, I guess.",
+        "Speaking of, I found this gnarly truck that I started fixing up. Who knows if I'll ever get it running, but for now I'm glad just to have a problem I might actually be able to solve. And maybe an escape vehicle? Stay tuned.\nFixing trucks and fixing brains. Who needs school anyway?",
+        "Guess Rachel's dad is into bad girls.",
+        'A hundred dollars closer to leaving Arcadia Bay. With a bit of cash, and the truck fixed, Rachel and I could really do it. We could leave for good...',
+        "How do you know when it's time to take a relationship to the next level?\nI'm talking about my drug dealer Frank, of course.",
+        'What would I buy if I had enough money to build a whole dorm? Probably not a dorm.',
+        "Steph's really good at creating fantasy worlds. I can see why Mikey prefers them to his reality.",
+        "It doesn't feel different. I don't belong here anymore. It's not my school.  I don't have a school. But nothing feels different. Everything still feels shitty.",
+        'Max would have jumped on that photographer position...',
+        'Blackwell Academy: Conserving water since never.',
+        "Such a nice, white door... though it feels like it's missing something, doesn't it?",
+        "Samuel. Blackwell's resident creepy groundskeeper.",
+        '[Imitation]\n"I always knew that one day Ms. Price would leave an indelible mark upon this school..."',
+        'No time like the present.',
+        "You know Wells doesn't really respect you, right? You're just a rent-a-cop who needs a haircut.",
+        "You're sorry? You just looked at my tits. You did. You stared right at them!",
+        'Seriously, my uterus is on fire, dude. Is that... uh... descriptive enough?',
+        'En fuego utero, Skip! En fuego utero!',
+        "Doubt I'll ever see my name on one of these. Too many chances to screw up before senior year.",
+        'Could Eliot be lamer if he tried?',
+        "Huh. There's way less porn here than I would have thought.",
+        "Guess I'm not the only one who keeps a diary.",
+        'Wait... are these about me? What the fuck, Eliot?',
+        'Eliot likes to write poetry about me, eh? What do I want to say in response?',
+        "Roses are red, violets are blue... and you're kind of a creeper, dude.",
+        'The world breaks everyone... and afterward some are strong at the broken places. Why does that make me sad?',
+        "I want to say that half the fun of weed is knowing it's illegal, but I think it'd be just as awesome over the counter.",
+        'That is really gross. I wonder what Max would think.',
+        'Aw. Did little Drew beat you up, too?',
+        "I didn't realize Drew was this good at sports. I bet he can't wait to get out of Arcadia Bay.",
+        'So many folks are shit out of luck around here.',
+        "No! Your brother said to stay inside. It'll be okay, Mikey. It'll be okay.",
+        'At least I can be here for Rachel... If I can find her.',
+        "Took a brief detour into Eliot's room and read his poetry. Dude's got... feelings. For me, I think. I'm flattered, I guess?",
+        "Spend a few minutes with Damon Merrick and you can tell that he's a peace-loving guy who gardens in his spare time and loves unicorns and rainbows. Oh, and breaking people's kneecaps. It's the simple pleasures.",
+        "No way in hell I'm going up on that stage.",
+        'Chloe Price presents: Firewalk: Laser Light Spectacular.',
+        'Of all the possible scenarios involving Victoria Chase and swords, this one is easily the least exciting.',
+        "After all the work Steph did, it's amazing that she would drop everything to be there for Mikey.",
+        'Sports just look so... exhausting.',
+        "For what? You didn't kill my dad. Or did you...",
+        "Samantha may be the only person in the word who really cares about Nathan. Including Nathan's dad.",
+        "You've seriously lost your mind. Do you see any members of the Vortex Club in this play? Newsflash: theater isn't cool.",
+        'Theater is about standing in front of everyone so they can study your every flaw. Every. Flaw',
+        "You know the phrase 'drama queen'? It's not a good thing. It's the thing no one wants to take to the prom.",
+        'What? Oh, no. No fucking chance.',
+        'Why does it feel like Steph is mocking me from afar?',
+        "It wouldn't be called a makeup mirror if it wasn't supposed to have makeup all over it.",
+        'When life gives you lipstick, use it to tag shit.',
+        'No, I am not just being dramatic.',
+        'Time for my big debut. Joy.',
+        'The best part of being kicked out of school is never having to worry about getting kicked out of school.',
+        'Poor Drew... he was just trying to keep his little brother safe. And there I was, stealing from him.',
+        "That Damon Merrick guy was such a freak. It's hard to imagine Frank being mixed up with a guy like that. But then again, I guess I don't really know Frank all that well.",
+        'I really hope Drew and Mikey are going to be okay.',
+        'I wish I could throw that [rock] at Rachel for getting me into this.',
+        'Rachel looks way too pleased with herself for getting me into this.',
+        '"Hell is empty, and all the devils are here!"',
+        'This play is super intense...',
+        "I'm more of a Burger a la King kinda gal.",
+        'Just some quality time. With the Ambers. What could possibly go wrong?',
+        "Not gonna lie, I totally killed it. Once I got past the stupid makeup and the blinding lights and just let myself get lost in it all. I guess acting is really about forgetting the rest of the world exists and being completely in the moment. When I'm with Rachel, somehow that becomes easy.",
+        'We ended up creating a new story together on stage. A much better story, because this one ends with the two of us escaping the island and sailing off into the sunset together. Take that, Shakespeare.\nWill real life turn out so awesome? Time will tell.',
+        "Time has told. And no, it turns out that real life is not like the stage. It is SO much better.\nWe're leaving. Tonight. Boom, peace out Arcadia Bay. We're headed to los Angeles, home of movie stars, dank weed, and... who cares, all that matters is it's not here.",
+        "What, you need me to draw you a map? We made out. As awesome as you may imagine making out with Rachel Amber sounds, believe me, it was a bajillion times awesomer.\nAfter a quick stop by Rachel's house we're headed off. Next time you hear from me I'll be an ex-Arcadian. Just like you.",
+        'Huh. Rachel really was an overachiever before she met me. Glad I nipped that in the bud.',
+        "It's like a thousand times more skeevy when the skeeviness is all polite to your face.",
+        'Hmm... "How to clear browser history" followed by a gap for all of yesterday? That\'s like cheating asshat 101. Poor Rachel...',
+        'It was a joke. Not a good one, clearly.',
+        "Holy shit, that's the guy who attacked Drew! And I'm holding onto a grand of his money? Rachel and I couldn't be leaving town soon enough.",
+        'Guess some families actually go to Paris instead of just talk about it their whole lives.',
+        "So this is what normal looks like. It's somehow way more boring and way weirder than I imagined.",
+        "It's crazy to picture Rachel growing up here. And being happy here. At least, before she met me. And now I'm taking her away. Or is she taking me away? This doesn't really seem like the kind of place people run away from...\nWhat am I saying? Fuck this place.",
+        "Oh, I think that's an original whogivesashit.",
+        'What the Amber family considers entertainment looks a lot like what I consider homework.',
+        'We can be very persuasive together.',
+        "Alright Chloe, you've set the table without ruining someone's marriage before. Piece of cake.",
+        'I bet Rose would kill it with my mom at the diner.',
+        'Rachel and I both had great childhoods. Mine just ended a little before hers, I guess.',
+        'Never realized that getting drunk could be so complicated.',
+        'Talking to James. As long as I can avoid using the words "cheating" and "scumbag", I should be fine.',
+        "Basic shapes. Now you're speaking my language.",
+        'The Amber family and fire, what could possibly go wrong?',
+        "Hi, Rose. Your husband's cheating on you. Pass the ketchup?",
+        "Don't worry, Mr. Amber. I can tell that my progressive attitude is not welcome in this house. I'll see myself out.",
+        "The funny thing is, even as James talked about all the horrible things Sera had done, he still seemed... I don't know. Fixated, I guess. You could see the power she had over him. Actually, when he was talking about how beloved and magnetic Sera used to be, I couldn't help [but] think of Rachel. I wonder if James sees that too? Maybe it's what makes him so afraid of her.",
+        "That's when the truth finally came out. Rachel's mom = not her mom. Rachel's real mom = make out woman.\nMind = blown.",
+        "Rachel only knew half the truth when she set that fire. What if she'd known everything?",
+        "I hope tonight hasn't messed up Rachel's memories of family trips like this.",
+        "This seems like a James and Rose bookshelf. I can't imagine Sera here instead.",
+        'I have to admit... he really cares about his daughter.',
+        'Rachel and I were really happy a few hours ago. And now...',
+        "I guess there's worse things than growing up around fancy stuff like this.",
+        'Holy shit. Rachel completely destroyed that table.',
+        "Rachel took that pretty hard. I should see if she's okay.",
+        'Hard to argue that Rachel would have had a better life with Sera. But does that make what James did right?',
+        "I need some way to show Rachel that I'm here for her.",
+        'The ying and badass yang of Rachel Amber.',
+        "Rachel's surrounded by so much love, yet she seems... so alone",
+        'Makes sense that Rachel needs two signs to contain her awesomeness. I shall call her "Lioncrab" from now on.',
+        "I can't imagine what Rachel is thinking right now. I want her to tell me... when she's ready.",
+        "I've heard that Rachel and Nathan hang out some times, but it still seems hard to believe.",
+        'I bet Rachel would rather be anywhere but here.',
+        'Maybe I can make the world a less scary place...\nBack on the train I said... "Let me know if you need an accomplice"',
+        "We were so close to making our break last night. Now... I don't know.",
+        '"May you always be safe." Sure, but from who?',
+        'Is there a section on how to walk Fours through batshit crazy family drama? No?',
+        "I could get grades like this. I just don't want to.",
+        "I know something Miss Arcadia doesn't. Weird.",
+        "Rachel's always made being an A student seem so easy. Almost sad to see all this effort.",
+        "Even you, Willy, couldn't come up with the tragedy Rachel's going through.",
+        "Rachel's really into stars. I wonder if it's her way of feeling connected?",
+        "In fact, anything you can come up with, I'll handle it.",
+        'Wait, David...? That motherfucker!',
+        "Whatever. I don't have time for this shit. I've gotta help Rachel.",
+        'What am I getting myself into?',
+        "When you think about it, it's kind of amazing anyone ever trusts anybody about anything. Take the stars, for example. We learn all these things about them in school, but no one bothers to tell us the most important fact of all: some of them are dead.\nYet, somehow, Rachel trusts me with the most important thing in her world. Finding her real mom.",
+        'Huh. Mom usually does my laundry when she gets sick of me not doing my laundry. Maybe she believed me for once about never coming back home.',
+        "If Rachel and I were still leaving today, there's literally nothing in there that's worth taking.",
+        "I'd say I went down in a blaze of glory.",
+        "Almost forgot I had this. I haven't played with it since... ever.",
+        '"A further layer of nuance"? Nathan almost pissed himself.',
+        'Thou art an idiot.',
+        "So much has changed. I wonder if you'd even recognize me now.",
+        "Dad's favorite jacket. Definitely taking that if Rachel and I ever leave.",
+        "One day I'll look at that and think \"Aw, my old home.\" and not \"Fuck this shithole forever.\"",
+        'No awesome pirate towel.',
+        "Captain Bluebeard's hair dye. Max was going to make me a pirate, but we never got around to it...",
+        "It's so weird to be home. As much as this place sucks, at least it's not full of secrets. Nobody's hiding anything. Well, except me'n'my pot. And everything with Rachel. But how could I possibly tell Mom what I'm up to?",
+        "I'm so tired of pretending things are fine to Mom. I always mess up again, and then she gets mad. Maybe... Maybe I should try not to see her today.",
+        'California, huh? Would be cool to see where Rachel grew up.',
+        "Argentina. Neruda's journey through the mountains... Dad used to love that story. I'll visit one day.",
+        'So if I put this photo out, Mom just hides it in a different drawer? What the hell.',
+        'Here goes. What are the chances I can avoid Mom or David?',
+        "What's the matter, David? Don't want any more decorations inside your toolbox?",
+        'Gross. But also kind of inspiring.',
+        'When life gives you gunk, make... uh... art, I guess.',
+        "I think I want a tattoo.\nYah, I know. It's \"permanent\", right? But that's the thing though, it's not. Not really. Cause we're not permanent at all.\nFunny how much simpler life seems when you keep that in mind. Like my hair. I wanted to see what it would look like blue, so I did. It looks awesome. One day, I'll make it all blue. And if I don't like it then, so what? It'll all fall out eventually. See how that works?",
+        'Eventually I got out of there and headed to the garage, which David is transforming into his own personal asshole cave.',
+        "Spark plug's busted. Carbon deposits. Of course.",
+        'I keep thinking that maybe I could have done something, but... when he attacked her, I just froze.',
+        "Frank's business must be booming. Shit, I really hope he's okay.",
+        "I wonder if Damon Merrick classifies as a biohazard. He's definitely human waste.",
+        'Mom brought so many of these home when Dad died, and not a single one described how I felt.',
+        "You ever notice how people in hospitals are always whispering? I think it's because hearing our own voices makes everything feel much more real, somehow. Like writing it down.",
+        "Wonder if a little friendly competition'll cheer Drew up?",
+        "I'm sure Rachel can't wait to see you.",
+        "I don't think you can know how you feel about someone until you almost lose them. Until you sit in a hospital waiting room, frozen in place yet somehow falling, silently desperately pleading to hear their voice, touch their hand, make them laugh...\nThen you know.",
+        "It was weird being with Rachel's dad. And, actually, kinda nice. We were on the same team, suddenly, and none of the other shit mattered. I think I can see why Rachel loves him.",
+        'If it can rain ash, I guess it could snow in L.A.',
+        'Best dad? Pfft. That stuff is all politics, anyway.',
+        'I guess getting your ass kissed comes with the DA territory.',
+        'Even if James is trying to protect Rachel from her mother, this seems like a pretty terrible way to act.',
+        'Welcome to shadyville.',
+        "Arcadia Bay's least wanted.",
+        "Did Damon really shoot someone? Guess I shouldn't be surprised.",
+        'Damon and knives seem like a solid bet.',
+        "Sera sent all these letters, and James never gave them to Rachel? That's so messed up.",
+        "The Sera in this letter doesn't seem anything at all like the person James told us about last night.",
+        'So this looks like Sera stopped cashing the checks James sent her? Guess he forgot to mention that during his story last night.',
+        "Okay, there's no way that Frank is snitching on Damon. But I love learning about his badass loitering charge.",
+        'I totally knew this guy was a criminal when I stole from him.',
+        "Fuck, that's Sera. And... she's at the mill. What is he doing to her?",
+        "Holy shit, does James even know what he's doing?",
+        'Did he really just follow me here?',
+        "Honestly, Eliot, you can judge me all you want. But it's pretty fucked up that you're here right now.",
+        "Stop-- stop suggesting that she's somehow bad for--",
+        'Seriously, man. You need to shut the fuck up before--',
+        'Eliot, I promise, noone is manipulating me.',
+        'Dude, you know you sound a little stalkerish right now?',
+        "Eliot's gone full-blown crazy. I need to get the police to come without tipping him off.",
+        "I'm starting to think that lying is contagious. One lie leads to another to another, and before you know it, there's an epidemic.",
+        'I burnt actual evidence, which means I should probably burn this journal too.',
+        'You know that poem that goes like "some say the world will end in fire, some say in ice" and fire is supposed to be desire and ice is supposed to be hatred? Yeah, out me down for one of each.',
+        'I was able to tip the cops off to what was happening. Then, when they showed up, I ran off. Poor Eliot wll have to answer to them... but also, fuck him.',
+        'Truth is, I almost feel bad for Eliot. He made the terrible decision to become obsessed with me. I just have way more important shit to deal with right now.',
+        'No way. My ride, my tunes.',
+        "Shit, this is bad. I'll get you help, Frank. But first I've gotta help Rachel's mom.",
+        "So that thin line between real life and dream life I've been telling you about... I think it just disappeared.\nI saw my dad again, but this time I was speeding along in my truck, and the next moment I was standing in a burned out forest. Talking to my dad.\nI wanted to know if he ever lied to me, the way James did to Rachel. But he couldn't tell me. I suppose that's one advantage dead people have over us.\nIf dreams can blend with reality, then I guess nightmares can too. That's exactly what the mill feels like now.",
+        'Glad to see the bong made it.',
+        "Where's the homicidal drug dealer, spooky deer head?",
+        "A knife might not be a bad idea...\n...never thought I'd have to say that.",
+        "I'm not afraid.",
+        'And just what is James protecting her from? You? She wants to meet you, Sera!',
+        "I don't know anything about addiction, but I know what it's like to be needed by someone. It gives you strength you never knew you had.",
+        "She's fearless. She's brilliant, and talented, and she feels so much... she's so strong.",
+        "I used to think my dad was perfect. But now I realize he was probably just as messed up as everyone. And it doesn't make me love him any less.",
+        "I'll take care of her, you know.",
+        # Farewell quotes start here
+        "She's never leaving!",
+        'What do two under-supervised friends with clean rooms and clean slates want to get into today?',
+        'The Dark Cavern was no match for you, eh? Long Max Silver to the rescue.',
+        'Come on, navigator. Point me to some treasure.',
+        '"I hope you are having a lot of fun being a teenager with your best friend." Aww, you were so cute.',
+        'We are going to live together when we can afford it and use only gold paint',
+        'Your Friend Forever,\nChloe Elizabeth Price',
+        "Someone's a goody two-shoes!",
+        "I don't want my parents to hear that! I've never gotten in trouble like this before.",
+        "Man, none of this would have happened if I had you around. I wouldn't care what anyone said.",
+        "Anyway, she... wouldn't leave me alone. So I turned up her Bunsen burner in Science. Just a little.",
+        "You know that I know what I'm doing.",
     ],
 
     'Nathan Prescott': [
@@ -898,6 +1896,10 @@ quotes = {
         # BTS quotes start here
         'At least my family pays tuition. How much financial aid does your deadbeat dad need again?',
         "You're a piece of shit. I'm going to kill you!",
+        "I can't do it, Dad. I'm sorry!",
+        "You don't understand. They all hate me. They're just gonna laugh at me. And the football team will (just) bully me more.",
+        'FUCK!',
+        'Fuck you...',
     ],
 
     'Hayden Jones': [
@@ -927,6 +1929,14 @@ quotes = {
         "[Nightmare]\nI fucking love your tats, Chloe. You're so hot. I can\'t believe it took us this long to hook up.",
         # BTS quotes start here
         'Everybody loves her. Little miss perfect.',
+        "Come on V. You got this. You. Got. This.\nShit, shit, shit... I can't do this. I'm going to ruin the play.",
+        'What are you two doing here? Or did you forget? You let this loser dropout sabotage you.',
+        "The dramatic arts at Blackwell are venerate by... what am I saying? I don't have to justify myself to you.",
+        "What was I thinking? Look at this thing! I can't go out like this! I can't play this part! I don't know the lines, I don't understand the stupid play, I don't even like theater!",
+        'Hello?! I was cast as understudy to you. What were the chances I was actually going to be here?',
+        "I quit! The show can go to hell for all I care. I'm not going down with it.",
+        'Good luck with your train wreck.',
+        '[Dream]\nBooooo!',
     ],
 
     'David Madsen': [
@@ -956,6 +1966,7 @@ quotes = {
         # BTS quotes start here
         "We don't have to like each other, but you will  respect me. You've enjoyed enough of a vacation from having a father figure. So there's some things I want to be real clear about...",
         "Chloe. I don't want to fight. I care about your mother very much. And you, too. I'd like for us to start over. What do you say?",
+        "We used to joke about all the trouble we were going to get into once we got back home. But he died. He died, and I didn't. And I think about that fact every damn day. The point is, I've had my share of grief. I know what you're going through. So I guess what I'm say is... I'm here to do what-- whatever I can to help you get over the loss of your dad.",
     ],
 
     'Kate Marsh': [
@@ -965,7 +1976,7 @@ quotes = {
         "I love that you stepped up to David, but it doesn't matter now. Nothing matters.",
         "Max, I'm in a nightmare and I can't wake up... unless I put myself to sleep.",
         'No wonder they call it a "web"--nothing can ever get out. Like my video...',
-        "Yep, my life is a blip. Blackwell taught me I'm worthless. I'll prove it right now."
+        "Yep, my life is a blip. Blackwell taught me I'm worthless. I'll prove it right now.",
         '"Matthew 11:28"... I can\'t believe you quoted one of my favorite passages...',
         "I'm so grateful for you coming up to that roofing and talking me down.",
         "Even Victoria wrote me a very sweet note... and I believe she was being real.",
@@ -996,6 +2007,11 @@ quotes = {
         "[Nightmare]\nToo bad you didn't become friends with the Tobanga...",
         '[Nightmare]\nDo you have a scarf I can borrow, Max?',
         '[Nightmare]\nSamuel wants to make sure you never snoop around his room again...',
+        # BTS quotes start here
+        'Rachel Amber is a dragon made of diamonds.',
+        'Are you angry all the time because you like the way it feels, or is it merely a desperate defense against experiencing true intimacy with others?',
+        'I only see what Eliot wants me to see.',
+        'No one is just one thing.',
     ],
 
     'Warren Graham': [
@@ -1037,11 +2053,13 @@ quotes = {
         "Between your grades and your disregard for my rules... I see you slipping. I'm worried.",
         "I'm... glad Dad still has a place in your heart.",
         "Chloe, I'm worried about you. Please let me know you're okay, okay?",
-        "Well, I don't really need a good reason to ditch school.",
         "[Dream]\nChloe. It's going to be okay. For me, not for you. I've got David now. You, though... You don't have anyone.",
         "Chloe, you can't keep doing this to me. I am trying my best.",
         'I need your help. Me. Your mother. We need to get our own house in order.',
         "Chloe, after everything that's happened... I'm at a loss. I need help.",
+        'It would be nice to see you tonight. Are you coming home? Please, Chloe. I miss you.',
+        "[Dream]\nchloe i'm so high right now\nwhy didn't you tell me drugs were so awesome?\nchloe can you lend me some money?\ni really need another hit\nplease?",
+        'You are one class act, David Madsen.',
     ],
 
     'Frank Bowers': [
@@ -1071,6 +2089,9 @@ quotes = {
         # BTS quotes start here
         "What are you waving around this kind of money here for? You really don't think before you act, do you?",
         "I see you've heard of him. This is his place. Damon's... a friend of mine.",
+        'Aw, shit. Pompidou! Get up here! Ya little killer...',
+        "No one's just a type, Price.",
+        'Damon, what the fuck? Chloe, go! Now!',
     ],
 
     'Courtney Wagner': [
@@ -1093,6 +2114,8 @@ quotes = {
         "It means you've forced my hand. This is a consequence of your actions, Chloe.",
         'For someone so aware of our school calendar, Ms. Price, I would expect fewer absences on your record.',
         'There is plenty of blame to go around.',
+        '[Dream]\nMs. Price, you do realize what happens to students when they leave Blackwell?\nTheir parents die.\nTick.\Tock.\nTick.\nTock.',
+        "As for the matter that you were injured on Blackwell grounds, I can't help but feel personally responsible. I have begun to look for new security personnel. If there is anything I can do to make you feel more safe upon your return, please do not hesitate to let me know.",
     ],
 
     'Diner Cop': [
@@ -1108,6 +2131,9 @@ quotes = {
         'Why are you crying, sweetheart?',
         "Gotta say, that was some fight. A lovers' quarrel, you might say? She nearly took your head off.",
         "Sometimes people need you, though. Even when they don't admit it.",
+        '[Dream]\nChloe, have you seen the rest of my script? I swear I had it a minute ago. Shit!',
+        # Farewell quotes start here
+        "I'm sure you're excited to open your time capsule, so I won't go on too long. Just know that Bloody Bill is bloody proud of you -- both of you.",
     ],
 
     'Luke Parker': [
@@ -1137,13 +2163,42 @@ quotes = {
         "See? You're the real thing, Chloe. I don't know anyone like you.",
         'Can I borrow your lighter?',
         "Oh man. We'd make such a great team.",
+        "Hasn't anyone ever told you not to fall asleep with a lit cigarette? You could start a fire.",
+        'So... are you going to invite me in, or what?',
+        'Holy shit, the all-seeing eye.',
+        "Chloe, this is incredible. I--I can't believe you found us an escape vehicle already.",
+        'Because life is a tale told by an idiot, full of sound and fury, signifying nothing.',
+        "Just because you can't stop him doesn't mean you don't fight back.",
+        "Do you think there's a point when you've been acting so much that you don't even have your own personality anymore? You're just whatever you think other people want you to be?",
+        "Shit. It's play time. Gotta go clean out my dressing room for Victoria. Not exactly the role I thought I'd be playing tonight. Oh well.",
+        'You outdid yourself, Price!',
+        "She's being modest. We play improv games all the time, and she's fantastic at it.",
+        'Thou poisonous slave, got by the devil himself. Filth as thou art, I have lodged thee in mine own cell, till thou didst seek to violate the honour of my child.',
+        "Go release them, Ariel: My charms I'll break, their senses I'll restore, and they shall be themselves.",
+        "Now my charms are all o'erthrown. And what strength I have's my own. Pray, release me from my bands. With the help of your good hands.",
+        "Why can't you just tell me the fucking truth?! Stop lying. Stop being a politician for one fucking minute. Can't you just... be my dad?",
+        "It's all lies. Everything. My entire life. My dad. My mom. If I can even call her that anymore. And that other woman. My real mom. She's the biggest lie of all. I can't trust any of them. I think you're the only one in the world I can trust.",
+        "I wore this bracelet my entire life. I never even asked why, never even thought about it. Somehow, I think I always knew. Even when I didn't know. That my real mother was gone.",
+        'I think I need to see her. Is that wrong?',
+        "[Dream]\nChloe? I have to tell you something. I've been dead for millions of years.",
+        "Here's something you never learned, max: When someone you care about is hurting, you do anything you can to be there for her. Even if that means making stars shine in her bedroom. That's how I got Rachel to open up and ask me about finding her mom.",
+        'Hey, Junkyard Queen, where you at?',
+        "Don't fucking touch her.",
+        'My guardian angel.',
+        "You're not getting rid of me that easy.",
     ],
 
+    # Everything below this point is from BTS
     'Travis Keaton': [
         "Hayden! You're killing me!",
         'Exquisite, Rachel. As always.',
         "Sometimes when you meet someone who's going to change your life, you just know it, I guess...",
         'Oh, no, I have first period improv with a class full of freshmen, now.',
+        'That infernal inferno is the culprit, closing down the roads and robbing us of our Ariel',
+        'Touche, fates. Touche...',
+        'My dear, your visage is as a vessel sent by the heavens to offer passage to my stranded soul.',
+        "Shh, it's magical!",
+        "You're a born thespian, my dear. I'll be chasing you down next year. And the ending! Absolutely transformative. I am humbled.",
     ],
 
     'Skip Matthews': [
@@ -1154,6 +2209,123 @@ quotes = {
         'Woof!',
     ],
 
+    'Shakespeare': [
+        "[Dream]\nI'll trade your father for Rachel.\nI need her to be a star.\My star.",
+    ],
+
+    'Steph Gingrich': [
+        "I don't normally get involved in other people's dumb decisions.",
+        "And Nathan as Caliban, there's so much depth there.",
+        "Ms. Amber just told me Rachel 's going to be okay. I'm really glad.",
+    ],
+
+    'Evan Harris': [
+        "I've learned something about myself recently. Something I think you might understand. I've learned that if I'm passionate about something, it's probably the right thing to care about.",
+        "I know you feel like I do. About different things, I'm sure. But you only give a shit about what you give a shit about. I like that.",
+    ],
+
+    'Damon Merrick': [
+        "Drew, relax. Slow down. You're making me think you're nervous about something.",
+        "I heard about your dad's job by the way. Tough times. Bet a grand would mean a lot to him right now. Where's my money, Drew?",
+        "You're just going to lie there? I thought football players were supposed to be tough. Sorry to have to do this kid. No one steals from me. No one.",
+        "Well, I'm done. Get my money, or maybe it'll be your little brother I talk to next.",
+        'You heard what happened to Drew, right? Maybe try keeping that in mind when you talk to me.',
+        "Why is it that chicks think it's okay to hit me, but if I lay a single finger on them, suddenly it's a whole other thing?",
+        "How's your daughter? You know she attacked me first, right? You really should teach her to behave better.",
+        "I know you're new at this, so I'll give you a pass. Don't fuck with me.",
+        'Yeah, and now you fucking destroy it. Why are you so bad at this?',
+        "Alright, good work! And now here's your girl, ready to go.",
+        'Cold feet, huh? You really are new at this. How about I leave her body on your doorstep? Bring me the cash, then we can talk.',
+        "Shhh... everything's going to be just fine. Just a little longer and all your troubles are going bye bye.",
+        "James Amber wants you out of the picture, so that's what's going to happen. After all, no one believes a junkie.",
+        "He said you've been sober a year? Respect. It's hard to kick this shit.",
+        "Talking's over.",
+        "You boosted the DA's shit. Got my money, burned the evidence, all that?",
+        'I said SHUT THE FUCK UP!',
+        'Go to your fucking happy place.',
+        "Let this be a lesson, kid. Make good life choices, or you'll end up like her.",
+        "I fucked you up good, didn't I? Guess you really don't know when to quit. Glad to see you back on your feet.",
+        "You don't really want to do this again, do you? Okay, then I don't want to do this again. Come one man.",
+    ],
+
+    'Drew North': [
+        "It's okay... I'm okay, little brother.",
+        "About Damon? I don't know. One day at a time.",
+        "She's not gonna quit, is she?",
+    ],
+
+    'Sean Prescott': [
+        "Because you show weakness. Just like you're doing right now.",
+        "When will you learn that it isn't about you and your problems? This is about the Prescott name. My name.",
+        'Administrator Hoffstader,\n\nOne of your current patients is Andrew North, a student at Blackwell Academy who was injured on school grounds.\n\nAs the physical safety of its students is a core responsibility of any school, Blackwell has failed Mr. North in this instance. I would therefore like to personally - and, I stress, anonymously - cover his medical expenses.\n\nIf I may be of assistance in speeding the process, do not hesitate to contact me.',
+    ],
+
+    'Samantha Meyers': [
+        "Your dark sense of humor reminds me a lot of Nathan's. Actually, the two of you are really similar.",
+    ],
+
+    'Rose Amber': [
+        "I get the sense that you're a force of nature yourself. I can see why the two of you get along so well.",
+        "You're a riot, Chloe.",
+        'Rachel was typically amazing, but I never liked The Tempest.',
+        "The way the fire spread so fast. I've never heard of anything like it.",
+        'I cannot imagine how difficult these last few years have been for you, Chloe. Now that you and Rachel have become friends, I want you to know that our home is always open to you.',
+        'I never knew how much I could love someone until I had Rachel.',
+        "You don't have to worry about me. Or James. Rachel's the one who needs you right now.",
+        'His entire life is about keeping people safe. Rachel is extremely fortunate to have him as her father.',
+        "There are many painful things in Rachel's past. Including my own role in hiding the truth.",
+        "Chloe, I can't even express... Thank you. So much.",
+        "I'm sorry! I'm a wreck. I stepped out to get some air. Rachel doesn't need me crying in front of her.",
+    ],
+
+    'James Amber': [
+        "I'd be lying if I said I didn't have concerns about your friendship. But perhaps you're exactly who Rachel needs right now, as she navigates the choppy waters of adolescence.",
+        "With everything going on in the world today, even a town like Arcadia Bay isn't immune to the ills of society.",
+        "It's imperative, in such troubled times as these, that we remember what is most important to us. Family.",
+        'Family is not merely a gift. It is a responsibility. As such, those we love must be cared for. And never, ever taken for granted.',
+        "Since you have answers for everything, Chloe, perhaps you'd like to enlighten us with some of your hard-earned wisdom about the world.",
+        "Rachel, that woman you saw... that wasn't my mistress. That was your mother.",
+        'In every way that matters, Rose is my wife and your mother. But the woman you saw at the overlook... her name is Sera. Your birth mother.',
+        "I'm going to tell you everything, Rachel. Everything I've shielded you from for so long. But the truth can be hard to look at. Is this really something you're ready for?",
+        "When I was in high school, there was one person everyone adored. Her teachers, her friend -- Sera was everyone's favorite. Every boy wanted to date her.",
+        "While the rest of us were pursuing college, careers, families, Sera wasn't looking for any of that. She was looking for escape.",
+        'I only saw what I wanted to see. Until it was almost too late.',
+        'There was so much love, but... I was still blind.',
+        "However much she loved you then, it wasn't enough. For Sera, the need to escape was always there.",
+        'For over a year, I tried to help her. I made myself believe that she was still a good person. That, no matter what happened, she would never do anything to hurt you. I was wrong.',
+        'Eventually, I saw her for who she really was. A destructive person. Someone who could never be satisfied, by anyone or anything.',
+        "I was desperate. I didn't know what to do, so I made a choice. I was never going to let her harm you again.",
+        'What you saw at the overlook, Rachel... it was true, we kissed. It was the saddest kiss of my life. It was a kiss goodbye.',
+        "I told her that I was happy for her, that she felt like she'd gotten her life together, finally. But she didn't get to just decide one day to be a mother. Not after what she'd done. Not after all the people she hurt, all the lives she destroyed.",
+        "I told her she'd been given the greatest gift in the world -- the chance to be your mother. And she squandered it. It pained me to hurt her like that. But I'd do it again, and again, and again, to keep you safe.",
+        "I send her money, every single month. It's our... arrangement.",
+        'When I left Sera, when I took Rachel away, I truly believe I saved her life. And I will continue to protect her, no matter what.',
+        "My biggest fear is that Rachel will try to meet Sera. I've dreaded it.",
+        "I'm depending on you to keep Rachel safe, Chloe.",
+        "Rachel is going to be alright. The knife damaged her brachial artery, but didn't cut it. She's out of surgery, and now she's resting.",
+        'I was told that if Rachel had arrived only a few minutes later, she might not have, um... Thank you, Chloe. You saved my world.',
+        "Chloe, this is Mr. Amber. Rachel is just waking up now. I'm sure she'd love to see you.",
+        'I know she will be thrilled to see you when she wakes up.',
+        'Go back to sleep, kiddo. You need your rest.',
+    ],
+
+    'Mikey North': [
+        "Don't be a stranger, okay?",
+    ],
+
+    'Sera Gearhardt': [
+        'Rachel can never know.',
+        'Rachel deserves a loving father. A father who cares for her.',
+        "James is a desperate man who loves his daughter. And she loves him. Tell her what happened here and you'll take that away from her. Forever.",
+        "You don't know what this is, to me. Every pain, every fear. Gone. No more sadness, no more grief. Why would anyone not want to feel that way? Ever?",
+        "She didn't miss anything. She has a perfect family.",
+        "It's not about James! It's not about me, and it's not about you. It's about Rachel. Tell her what James did, and you'll be killing him for her. You understand that, don't you? You lost your father. Do you really want to put Rachel through that?",
+        "Nothing can change the mistakes I made. I'll never get to be Rachel's mother. Not really. But there's one thing I can still do for her. The only thing I can do. Let me give her the father she deserves. The one who raised her, protected her. The one who loves her more than anything.",
+        "You can do whatever you want, Chloe. You have the power. What you have to decide is whether you're going to protect Rachel, or cause her even more hurt.",
+        'So please, tell her I was never here. Let her have what peace she can. Without me.',
+    ],
+
 }
+
 
 # print(sum([len(v) for v in quotes.values()]))
