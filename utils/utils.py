@@ -5,6 +5,8 @@ import urllib.error
 # PIP
 import discord
 from discord.ext import commands
+# CUSTOM
+from data.quotes import quotes
 
 
 class OverviewPaginator:
@@ -87,21 +89,56 @@ class OverviewPaginator:
         """
         Prepare a paginator for the character overview of the quote command.
         """
-        single_chars = self.cog.get_single_char_overview()
-        char_pairs = self.cog.get_char_pair_overview()
         paginator = commands.Paginator(prefix=f'```css\n[Available Characters]\n```',
                                        suffix='')
 
-        for overview in [single_chars, char_pairs]:
+        for page in await self.get_char_overviews():
             paginator.add_line('```ml')
-
-            for line in overview.split('\n'):
-                paginator.add_line(line)
-
+            paginator.add_line('\n'.join(page))
             paginator.add_line('```')
             paginator.close_page()
 
         self.paginator = paginator
+
+    async def get_char_overviews(self):
+        """
+        Further split up the overviews for quote characters
+        to avoid big blocks.
+        """
+        single_chars = sorted([name for name in quotes.keys() if '&' not in name])
+        char_pairs = sorted([name for name in quotes.keys() if '&' in name])
+
+        single_quote_batches = await self.batch_quotes(quotes, single_chars, char_limit=18)
+        pair_quote_batches = await self.batch_quotes(quotes, char_pairs, char_limit=10)
+
+        pages = []
+        for batch in single_quote_batches:
+            pages.append([self.cog.get_single_char_overview(batch)])
+        for batch in pair_quote_batches:
+            pages.append([self.cog.get_char_pair_overview(batch)])
+
+        return pages
+
+    @staticmethod
+    async def batch_quotes(quotes_, chars, char_limit=10):
+        """
+        Create a batch of quotes for the specified
+        list of characters.
+        """
+        batch = []
+        page_quotes = {}
+
+        for index, char in enumerate(chars):
+            if index > 0 and index % char_limit == 0:
+                batch.append(page_quotes)
+                page_quotes = {}
+            page_quotes[char] = quotes_[char]
+
+        # Last batch might not be added
+        if page_quotes not in batch:
+            batch.append(page_quotes)
+
+        return batch
 
     async def paginate(self):
         """

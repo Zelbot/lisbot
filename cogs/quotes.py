@@ -53,7 +53,7 @@ class Quotes(commands.Cog):
         return overview
 
     @staticmethod
-    def get_single_char_overview():
+    def get_single_char_overview(quotes):
         """
         Prepares an overview of all single characters.
         """
@@ -107,7 +107,7 @@ class Quotes(commands.Cog):
         return overview.strip()
 
     @staticmethod
-    def get_char_pair_overview():
+    def get_char_pair_overview(quotes):
         """
         Prepares an overview of all dialogue pairs.
         """
