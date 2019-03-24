@@ -268,7 +268,7 @@ class Quotes(commands.Cog):
             return
         await utils.invoke_with_checks(ctx, 'quote', char=char, weighted=True)
 
-    @quote.command(name='single', hidden=True)
+    @quote.command(name='single', aliases=['solo'], hidden=True)
     async def quote_single(self, ctx, *, char: utils.QuoteChar=None):
         """
         Works the same as the quote command, except for ensuring
@@ -298,7 +298,7 @@ class Quotes(commands.Cog):
 
         await ctx.send(output)
 
-    @quote.command(name='double', aliases=['pair'])
+    @quote.command(name='double', aliases=['duo', 'pair'])
     async def quote_double(self, ctx, *, char: utils.QuoteChar=None):
         """
         Works the same as the quote command, except for ensuring
