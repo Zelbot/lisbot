@@ -93,7 +93,8 @@ class Help(commands.Cog):
                                                 cmds[cmd_name])
             output += '\n\n'
 
-        await ctx.send(output)
+        await ctx.author.send(output)
+        await ctx.message.add_reaction('\N{OPEN MAILBOX WITH RAISED FLAG}')
 
     @commands.is_owner()
     @commands.command()
