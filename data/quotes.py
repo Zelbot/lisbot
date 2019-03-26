@@ -992,7 +992,7 @@ quotes = {
     ],
 
     # BTS quotes
-    'Bald & Brown-Haired Firefighter': [
+    'Brown-Haired & Bald Firefighter': [
         'Brown-Haired Firefighter: Hey, just heard the fire went out...'
         "\nBald Firefighter: Went out? You mean it's controlled?"
         "\nBrown-Haired Firefighter: No, it's completely out. It extinguished itself."
@@ -1341,7 +1341,7 @@ quotes = {
         "One time, we stuck a bunch of this tape to Chloe's face to make a blue beard. Putting it on was a lot more fun than taking it off.",
         'I still wish I could live in the world we drew.',
         "I've spent so much of my life here, every little corner is familiar. Comforting.",
-        "These games we're playing... buried pirate treasure from out past selves... Is this all selfish of me? Why is this making me feel more guilty about leaving?",
+        "These games we're playing... buried pirate treasure from our past selves... Is this all selfish of me? Why is this making me feel more guilty about leaving?",
         "I'm really gonna miss Price family barbeques.",
         "Chloe's bottle rocket, the fastest way to get an entire bottle of soda in your hair.",
         'I wish I could freeze this moment and never have to leave it.',
