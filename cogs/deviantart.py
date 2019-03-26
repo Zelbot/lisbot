@@ -162,9 +162,8 @@ class DeviantArt(commands.Cog):
                            f' {self.search_limit * self.post_limit} posts'
                            f' for {get.upper()} content,'
                            ' but could not find anything.')
-            await searching_msg.delete()
 
-            return None, None
+            return searching_msg, None
 
         return searching_msg, deviations
 
@@ -195,7 +194,7 @@ class DeviantArt(commands.Cog):
 
         return deviations
 
-    async def post_random_deviation(self, ctx, searching_msg, deviations):
+    async def post_random_deviation(self, ctx, deviations):
         """
         Post a deviation in embed form, randomly chosen
         from the list of the given deviations.
@@ -204,7 +203,6 @@ class DeviantArt(commands.Cog):
         embed = await self.embed_from_deviation(ctx, chosen_deviation)
 
         await ctx.send(embed=embed)
-        await searching_msg.delete()
 
     @staticmethod
     async def filter_deviations(deviations, get='all'):
@@ -287,10 +285,10 @@ class DeviantArt(commands.Cog):
             ctx, self.browse_popular, query,
             timerange=timerange, limit=self.post_limit, offset=random_offset
         )
-        if deviations is None:
-            return
 
-        await self.post_random_deviation(ctx, searching_msg, deviations)
+        if deviations is not None:
+            await self.post_random_deviation(ctx, deviations)
+        await searching_msg.delete()
 
     @deviantart.command(name='newest', aliases=['new'], hidden=True)
     async def _deviantart_newest(self, ctx, *, query: utils.LiSQuery=None):
@@ -305,11 +303,10 @@ class DeviantArt(commands.Cog):
             ctx, self.browse_newest, query,
             limit=self.post_limit
         )
-        if deviations is None:
-            return
 
-        await self.post_random_deviation(ctx, searching_msg, deviations)
-
+        if deviations is not None:
+            await self.post_random_deviation(ctx, deviations)
+        await searching_msg.delete()
 
 def setup(bot):
     bot.add_cog(DeviantArt(bot))
