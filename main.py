@@ -91,12 +91,14 @@ async def on_command_error(ctx, exc):
 
     if output_embed is not None:
         if isinstance(exc, commands.errors.CommandOnCooldown):
-            # output_embed.title = discord.Embed.Empty
-            # await ctx.send(embed=output_embed)
             cooldown = random.choice(['Chillax!', 'Chillax, sistah.'])
             cooldown += f' Try again in {round(exc.retry_after, 2)} seconds.'
-            await ctx.send(cooldown)
+            await ctx.send(cooldown, delete_after=5.0)
             print(f'On cooldown: {ctx.author} - {ctx.author.id}')
+
+        if isinstance(exc, commands.errors.NoPrivateMessage):
+            await ctx.send(embed=output_embed)
+
         else:
             ai = await bot.application_info()
             await ai.owner.send(embed=output_embed)
