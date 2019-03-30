@@ -43,6 +43,14 @@ async def is_ready(ctx):
 
 
 @bot.check
+async def is_banned(ctx):
+    """
+    Restrict some people from using the bot.
+    """
+    return ctx.author.id not in config.banned_user_ids
+
+
+@bot.check
 async def is_dms(ctx):
     """
     Do not allow any commands to be used in DMs.
